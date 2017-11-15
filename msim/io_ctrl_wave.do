@@ -22,6 +22,7 @@ add wave -noupdate -height 30 -format Logic /tb_io_ctrl/i_io_ctrl/s_ss_sel
 add wave -noupdate -height 30 -format Logic /tb_io_ctrl/i_io_ctrl/s_ss
 add wave -noupdate -height 30 -format Unsigned /tb_io_ctrl/i_io_ctrl/s_muxcnt
 add wave -noupdate -height 30 -format Unsigned /tb_io_ctrl/i_io_ctrl/s_debcnt
+add wave -noupdate -height 30 -format Unsigned /tb_io_ctrl/i_io_ctrl/s_button
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {0 ps}
 WaveRestoreZoom {0 ps} {1 ns}

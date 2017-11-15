@@ -99,9 +99,9 @@ begin
   begin
 
     clk_i <= '0';
-    wait for 10 ns;
+    wait for 5 ns;
     clk_i <= '1';
-    wait for 10 ns;
+    wait for 5 ns;
 
   end process p_clk;
 
@@ -118,59 +118,53 @@ begin
     sw_i <= "0000000000000000";
     pb_i <= "0000";
 
-    wait for 2 ms;
+    wait for 1 ms;
 
     reset_i <= '0';
 
-    sw_i <= "0000000000000001";
-    pb_i <= "0001";
+    wait for 1 ms;
 
-    dig0_i <= "00001000";
-    dig1_i <= "10000000";
-    dig2_i <= "00000001";
-    dig3_i <= "00001000";
-
-
-    wait for 2 ms;
+-- some switches, some buttons - less than 3 100kHz ticks
 
     sw_i <= "0000000000000001";
-    pb_i <= "0001";
+    pb_i <= "0000";
 
-    dig0_i <= "01000000";
-    dig1_i <= "00010000";
-    dig2_i <= "00001000";
-    dig3_i <= "00000010";
+    wait for 1 ms;
 
-    wait for 2 ms;
+    sw_i <= "0000000000000010";
+    pb_i <= "1001";
 
-    sw_i <= "0000000000000001";
-    pb_i <= "0001";
+    wait for 1 ms;
 
-    dig0_i <= "00100000";
-    dig1_i <= "00010000";
-    dig2_i <= "00000100";
-    dig3_i <= "00010000";
+    sw_i <= "0000111000000010";
+    pb_i <= "0101";
 
     wait for 2 ms;
 
-    sw_i <= "0000001000000000";
-    pb_i <= "0100";
-
-    dig0_i <= "00100000";
-    dig1_i <= "00001000";
-    dig2_i <= "00100000";
-    dig3_i <= "00001000";
-
-    led_i <= "1111111111000000";
-
+    sw_i <= "0000000001110010";
+    pb_i <= "0011";
+    
     wait for 2 ms;
+
+    sw_i <= "0111100000000010";
+    pb_i <= "1111";
+
+    wait for 10 ms;
+
+    sw_i <= "0000000011100010";
+    pb_i <= "1101";
+
+    wait for 10 ms;
+
+    sw_i <= "0111100000000010";
+    pb_i <= "0011";
 
     dig0_i <= "00000010";
     dig1_i <= "00100000";
     dig2_i <= "00001000";
     dig3_i <= "00010000";
 
-    wait for 2 ms;
+    wait for 5 ms;
 
     dig0_i <= "00010000";
     dig1_i <= "01000000";
@@ -199,13 +193,6 @@ begin
     dig3_i <= "00000001";
 
     wait for 2 ms;
-
-    dig0_i <= "01000000";
-    dig1_i <= "00010000";
-    dig2_i <= "00000000";
-    dig3_i <= "00000100";
-
-    wait for 10 ms;
 
   end process run;
 

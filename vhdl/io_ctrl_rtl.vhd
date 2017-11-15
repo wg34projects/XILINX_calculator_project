@@ -46,6 +46,7 @@ architecture rtl of io_ctrl is
   signal s_ss : std_logic_vector(7 downto 0);
   signal s_muxcnt : std_logic_vector(1 downto 0);
   signal s_debcnt : std_logic_vector(3 downto 0);
+  signal s_button : std_logic;
 
 begin
 
@@ -59,6 +60,7 @@ begin
     if reset_i = '1' then
 
       s_1khzen <= '0';
+      s_debcnt <= "0000";
       s_enctr <= (others => '0');
       s_muxcnt <= "00";
 
@@ -75,9 +77,21 @@ begin
 
           s_muxcnt <= unsigned (s_muxcnt) + 1;
 
+          if s_button = '1' then
+
+            s_debcnt <= unsigned(s_debcnt) + 1;
+ 
+          end if;
+
           if s_muxcnt = "11" then
 
             s_muxcnt <= "00";
+
+          end if;
+
+          if s_debcnt = "0011" then
+
+            s_debcnt <= "0000";
 
          end if;
 
@@ -98,27 +112,27 @@ begin
 
     if reset_i = '1' then
 
-      s_debcnt <= "0000";
       swsync <= (others => '0');
       pbsync <= (others => '0');
+      s_button <= '0';
 
     elsif clk_i'event and clk_i = '1' then
 
       if s_1khzen = '1' then
 
-        s_debcnt <= unsigned(s_debcnt) + 1;
-      
-          if s_debcnt = "1111" then
+        if swsync /= sw_i or pbsync /= pb_i then
 
-            swsync <= sw_i;
-            pbsync <= pb_i;
-            s_debcnt <= "0000";
+          s_button <= '1';
 
-          end if;
+          if s_debcnt = "0011" then
 
-      else
+             swsync <= sw_i;
+             pbsync <= pb_i;
+             s_button <= '0';
 
-        s_debcnt <= "0000";
+           end if;
+
+        end if;              
 
       end if;
 
@@ -138,7 +152,7 @@ begin
 
     if reset_i = '1' then
 
-      s_ss_sel <= (others => '0');
+      s_ss_sel <= (others => '1');
       s_ss <= (others => '0');
       
     elsif clk_i'event and clk_i = '1' then
