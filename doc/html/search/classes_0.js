@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['io_5fctrl',['io_ctrl',['../classio__ctrl.html',1,'']]]
+  ['calc_5fctrl',['calc_ctrl',['../classcalc__ctrl.html',1,'']]]
 ];

@@ -10,13 +10,13 @@
 --
 -- Version history:
 --
--- v_0.1	13.11.2017	start Project
---
+-- v_0.1	13.11.2017	IO Ctrl + Testbench
+-- v_0.2	15.11.2017	Calc Ctrl + Testbench
 --
 -- Design Unit:	IO Control Unit Testbench
 --				Configuration
 --
--- Description:	The IO Control uniti part of the calculator project.
+-- Description:	The IO Control unit is part of the calculator project.
 --				It manages the interface to the 7-segment displays,
 --				the LEDs, the push buttons and the switches of the
 --				Digilent Basys3 FPGA board.

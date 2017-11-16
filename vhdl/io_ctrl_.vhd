@@ -10,13 +10,13 @@
 --
 -- Version history:
 --
--- v_0.1	13.11.2017	start Project
---
+-- v_0.1	13.11.2017	IO Ctrl + Testbench
+-- v_0.2	15.11.2017	Calc Ctrl + Testbench
 --
 -- Design Unit:	IO Control Unit
 --				Entity
 --
--- Description:	The IO Control uniti part of the calculator project.
+-- Description:	The IO Control unit is part of the calculator project.
 --				It manages the interface to the 7-segment displays,
 --				the LEDs, the push buttons and the switches of the
 --				Digilent Basys3 FPGA board.
@@ -31,7 +31,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 --! @brief IO Control Unit Entity
---! @details The IO Control uniti part of the calculator project.
+--! @details The IO Control unit is part of the calculator project.
 
 entity io_ctrl is
 
@@ -39,7 +39,7 @@ entity io_ctrl is
   (
     clk_i : in std_logic;
     reset_i : in std_logic;
-    dig0_i : in std_logic_vector(7 downto 0);
+    dig0_i : in std_logic_vector(7 downto 0); --!binary representation for digits segement 0
     dig1_i : in std_logic_vector(7 downto 0);
     dig2_i : in std_logic_vector(7 downto 0);
     dig3_i : in std_logic_vector(7 downto 0);
@@ -54,5 +54,3 @@ entity io_ctrl is
   );
 
 end io_ctrl;
-
-
