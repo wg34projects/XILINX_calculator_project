@@ -8,10 +8,76 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/helmutresch/WorkDir/XILINX_calculator_project/msim
-Ecalc_ctrl
-w1510862198
+Ealu
+w1510962605
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8../vhdl/alu_.vhd
+F../vhdl/alu_.vhd
+l0
+L35
+V6e7kYX[fZn?RV?hIj1>661
+!s100 gPT9@GJnnT1Yl41TYX9391
+Z3 OV;C;10.5b;63
+32
+Z4 !s110 1511118757
+!i10b 1
+Z5 !s108 1511118757.000000
+!s90 -reportprogress|300|../vhdl/alu_.vhd|
+!s107 ../vhdl/alu_.vhd|
+!i113 1
+Z6 tExplicit 1 CvgOpt 0
+Artl
+w1511113632
+Z7 DEx4 work 3 alu 0 22 6e7kYX[fZn?RV?hIj1>661
+Z8 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R1
+R2
+8../vhdl/alu_rtl.vhd
+F../vhdl/alu_rtl.vhd
+l57
+L36
+ViC:GNi[QjOP1A<DD2zT^i3
+!s100 9lYdO0h`882M<IR4AMo=P3
+R3
+32
+R4
+!i10b 1
+R5
+!s90 -reportprogress|300|../vhdl/alu_rtl.vhd|
+!s107 ../vhdl/alu_rtl.vhd|
+!i113 1
+R6
+Calu_rtl_cfg
+ealu
+artl
+R8
+DAx4 work 3 alu 3 rtl 22 FQlIZ8C4KAbVh:Nlo@V?g2
+R1
+R2
+R7
+w1510963052
+R0
+8../vhdl/alu_cfg.vhd
+F../vhdl/alu_cfg.vhd
+l0
+L29
+V1@edR>BY5Clz`L@iZ[O[61
+!s100 T>>VGJn9NM[[lETK`mCRR3
+R3
+32
+Z9 !s110 1511111793
+!i10b 0
+Z10 !s108 1511111793.000000
+!s90 -reportprogress|300|../vhdl/alu_cfg.vhd|
+!s107 ../vhdl/alu_cfg.vhd|
+!i113 1
+R6
+Ecalc_ctrl
+w1510962051
+R1
+R2
 R0
 8../vhdl/calc_ctrl_.vhd
 F../vhdl/calc_ctrl_.vhd
@@ -19,27 +85,27 @@ l0
 L35
 V4hJRXk0=n1BdGQR=PQKDV3
 !s100 YNnNe^z9265o1]d?jP;7:3
-Z3 OV;C;10.5b;63
+R3
 32
-Z4 !s110 1510876067
+R4
 !i10b 1
-Z5 !s108 1510876067.000000
+Z11 !s108 1511118756.000000
 !s90 -reportprogress|300|../vhdl/calc_ctrl_.vhd|
 !s107 ../vhdl/calc_ctrl_.vhd|
 !i113 1
-Z6 tExplicit 1 CvgOpt 0
+R6
 Artl
-w1510875367
-Z7 DEx4 work 9 calc_ctrl 0 22 4hJRXk0=n1BdGQR=PQKDV3
-Z8 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+w1511118381
+Z12 DEx4 work 9 calc_ctrl 0 22 4hJRXk0=n1BdGQR=PQKDV3
+R8
 R1
 R2
 8../vhdl/calc_ctrl_rtl.vhd
 F../vhdl/calc_ctrl_rtl.vhd
-l50
+l133
 L36
-VD9`nYUQdoIWC>OUGa9=Xb2
-!s100 n4MM97H@g5JMF3?Mn3cb31
+V@KEB:lSVg??Se0hS>Ag=o1
+!s100 hTQkI0[5`BkPQ:Q9YPV9U1
 R3
 32
 R4
@@ -53,10 +119,10 @@ Ccalc_ctrl_rtl_cfg
 ecalc_ctrl
 artl
 R8
-DAx4 work 9 calc_ctrl 3 rtl 22 D9`nYUQdoIWC>OUGa9=Xb2
+DAx4 work 9 calc_ctrl 3 rtl 22 @KEB:lSVg??Se0hS>Ag=o1
 R1
 R2
-R7
+R12
 w1510862253
 R0
 8../vhdl/calc_ctrl_cfg.vhd
@@ -67,11 +133,175 @@ Vo5IR=]i_OTJ_7_V@hOz;10
 !s100 WVUAEj_4CmbOTb_QOMLBH1
 R3
 32
-Z9 !s110 1510876068
+Z13 !s110 1511118391
 !i10b 0
-Z10 !s108 1510876068.000000
+Z14 !s108 1511118391.000000
 !s90 -reportprogress|300|../vhdl/calc_ctrl_cfg.vhd|
 !s107 ../vhdl/calc_ctrl_cfg.vhd|
+!i113 1
+R6
+Ecalc_top
+w1511018892
+R1
+R2
+R0
+8../vhdl/calc_top_.vhd
+F../vhdl/calc_top_.vhd
+l0
+L35
+V?GTiCcGK4ZeTLeZbi8:8:1
+!s100 0a8^EAO2cWafX=`J7HSEP3
+R3
+32
+R4
+!i10b 1
+R5
+!s90 -reportprogress|300|../vhdl/calc_top_.vhd|
+!s107 ../vhdl/calc_top_.vhd|
+!i113 1
+R6
+Astruc
+w1511020027
+Z15 DEx4 work 8 calc_top 0 22 ?GTiCcGK4ZeTLeZbi8:8:1
+R8
+R1
+R2
+Z16 8../vhdl/calc_top_rtl.vhd
+Z17 F../vhdl/calc_top_rtl.vhd
+l123
+L36
+VeYooSdHgC:IZeTA1D`fn<0
+!s100 >UzNU_9NnH7AzV7^CocYl2
+R3
+32
+R4
+!i10b 1
+R5
+Z18 !s90 -reportprogress|300|../vhdl/calc_top_rtl.vhd|
+Z19 !s107 ../vhdl/calc_top_rtl.vhd|
+!i113 1
+R6
+Astruct
+w1510981888
+R15
+R8
+R1
+R2
+R16
+R17
+l127
+L36
+V;jdOE[7FLXzadbl8LJ3HX2
+!s100 `I1=g7N0Di82ffofaAU^^1
+R3
+32
+!s110 1510982075
+!i10b 1
+!s108 1510982075.000000
+R18
+R19
+!i113 1
+R6
+Artl
+w1510975729
+R15
+R8
+R1
+R2
+R16
+R17
+l38
+L36
+Vgf;MoQ:PYUS3bY0=2mL<n1
+!s100 ?OY>80[kAMP2<3ePgeC@83
+R3
+32
+!s110 1510976496
+!i10b 1
+!s108 1510976496.000000
+R18
+R19
+!i113 1
+R6
+Ccalc_top_rtl_cfg
+Z20 ecalc_top
+artl
+R8
+DAx4 work 8 calc_top 3 rtl 22 gf;MoQ:PYUS3bY0=2mL<n1
+R1
+R2
+R15
+w1510976188
+R0
+Z21 8../vhdl/calc_top_cfg.vhd
+Z22 F../vhdl/calc_top_cfg.vhd
+l0
+L29
+VPff74=XYMz>4_IOnJQ>B70
+!s100 Z=45VFdjc;aT<OdV`2flK2
+R3
+32
+!s110 1510981364
+!i10b 0
+!s108 1510981364.000000
+Z23 !s90 -reportprogress|300|../vhdl/calc_top_cfg.vhd|
+Z24 !s107 ../vhdl/calc_top_cfg.vhd|
+!i113 1
+R6
+Ccalc_top_struc_cfg
+R20
+astruc
+R7
+R12
+Z25 DEx4 work 7 io_ctrl 0 22 lkGc=ifgRFl4U8IeFB<^13
+R8
+DAx4 work 8 calc_top 5 struc 22 >A4<IELb:4<N`zkn62[:82
+R1
+R2
+R15
+w1510982229
+R0
+R21
+R22
+l0
+L29
+Vbz6XzXdmKlK:C:ZA2PHSG1
+!s100 P^3e6oFo[XS>5@E[9Y2;l3
+R3
+32
+!s110 1511018624
+!i10b 0
+!s108 1511018624.000000
+R23
+R24
+!i113 1
+R6
+Ccalc_top_struct_cfg
+R20
+astruct
+R7
+R12
+R25
+R8
+DAx4 work 8 calc_top 6 struct 22 ;jdOE[7FLXzadbl8LJ3HX2
+R1
+R2
+R15
+w1510982008
+R0
+R21
+R22
+l0
+L29
+V_9zS848]Cc3@n3fYVaECb2
+!s100 7ocl2<X2<M>R[Di`gI_R21
+R3
+32
+!s110 1510982011
+!i10b 0
+!s108 1510982011.000000
+R23
+R24
 !i113 1
 R6
 Eio_ctrl
@@ -87,16 +317,16 @@ VlkGc=ifgRFl4U8IeFB<^13
 !s100 K^iXj2IiJcHRE:Soek6502
 R3
 32
-Z11 !s110 1510870974
+Z26 !s110 1511118756
 !i10b 1
-Z12 !s108 1510870974.000000
+R11
 !s90 -reportprogress|300|../vhdl/io_ctrl_.vhd|
 !s107 ../vhdl/io_ctrl_.vhd|
 !i113 1
 R6
 Artl
-w1510862268
-Z13 DEx4 work 7 io_ctrl 0 22 lkGc=ifgRFl4U8IeFB<^13
+w1511116229
+R25
 R8
 R1
 R2
@@ -104,13 +334,13 @@ R2
 F../vhdl/io_ctrl_rtl.vhd
 l51
 L37
-VIo19T]l^?Md6kRgZILJUO2
-!s100 7g6897mQ:a]FkY<e=ml662
+VIVT2=57YZ3WoeVJYA]5em1
+!s100 h8cgdLD=cL^zILN9Oi7`41
 R3
 32
-R11
+R26
 !i10b 1
-R12
+R11
 !s90 -reportprogress|300|../vhdl/io_ctrl_rtl.vhd|
 !s107 ../vhdl/io_ctrl_rtl.vhd|
 !i113 1
@@ -119,8 +349,8 @@ Asim
 DEx4 work 7 io_ctrl 0 22 X=PJ]hHAB4;FR@[:i77LE1
 R1
 R2
-Z14 8../tb/tb_io_ctrl_sim.vhd
-Z15 F../tb/tb_io_ctrl_sim.vhd
+Z27 8../tb/tb_io_ctrl_sim.vhd
+Z28 F../tb/tb_io_ctrl_sim.vhd
 l73
 L36
 VB_I1RQ^RQdc3M?5770NX70
@@ -130,8 +360,8 @@ R3
 !s110 1510685053
 !i10b 1
 !s108 1510685053.000000
-Z16 !s90 -reportprogress|300|../tb/tb_io_ctrl_sim.vhd|
-Z17 !s107 ../tb/tb_io_ctrl_sim.vhd|
+Z29 !s90 -reportprogress|300|../tb/tb_io_ctrl_sim.vhd|
+Z30 !s107 ../tb/tb_io_ctrl_sim.vhd|
 !i113 1
 R6
 w1510684966
@@ -139,10 +369,10 @@ Cio_ctrl_rtl_cfg
 eio_ctrl
 artl
 R8
-DAx4 work 7 io_ctrl 3 rtl 22 Io19T]l^?Md6kRgZILJUO2
+DAx4 work 7 io_ctrl 3 rtl 22 ;W^`SkP7Bn:LH]bakPe[V2
 R1
 R2
-R13
+R25
 w1510862270
 R0
 8../vhdl/io_ctrl_cfg.vhd
@@ -153,11 +383,77 @@ V`4JHEzYISaU6[ZCl4dJoi0
 !s100 97iF0EacK5gc]H4kkB2C93
 R3
 32
-R11
+Z31 !s110 1511037566
 !i10b 0
-R12
+Z32 !s108 1511037566.000000
 !s90 -reportprogress|300|../vhdl/io_ctrl_cfg.vhd|
 !s107 ../vhdl/io_ctrl_cfg.vhd|
+!i113 1
+R6
+Etb_alu
+w1510962686
+R1
+R2
+R0
+8../tb/tb_alu_.vhd
+F../tb/tb_alu_.vhd
+l0
+L36
+V<Fm=lI9>lPaPXQYDeKzWm0
+!s100 Q5jW1VP>e:<iS?FI^F=Ej3
+R3
+32
+R9
+!i10b 1
+R10
+!s90 -reportprogress|300|../tb/tb_alu_.vhd|
+!s107 ../tb/tb_alu_.vhd|
+!i113 1
+R6
+Asim
+w1510975302
+Z33 DEx4 work 6 tb_alu 0 22 <Fm=lI9>lPaPXQYDeKzWm0
+R1
+R2
+8../tb/tb_alu_sim.vhd
+F../tb/tb_alu_sim.vhd
+l69
+L36
+Vh8ON_K_WM:[bP40QBEOOS3
+!s100 hc6H@UJDzGF:PYI5k=SRR1
+R3
+32
+R9
+!i10b 1
+R10
+!s90 -reportprogress|300|../tb/tb_alu_sim.vhd|
+!s107 ../tb/tb_alu_sim.vhd|
+!i113 1
+R6
+Ctb_alu_cfg
+etb_alu
+asim
+R7
+DCx4 work 11 alu_rtl_cfg 0 22 1@edR>BY5Clz`L@iZ[O[61
+DAx4 work 6 tb_alu 3 sim 22 h8ON_K_WM:[bP40QBEOOS3
+R1
+R2
+R33
+w1510962965
+R0
+8../tb/tb_alu_cfg.vhd
+F../tb/tb_alu_cfg.vhd
+l0
+L30
+VWzDdKeWkU95zgW5?=FSEB1
+!s100 YoC>dH7zdJlThgGE2Af:H3
+R3
+32
+R9
+!i10b 0
+R10
+!s90 -reportprogress|300|../tb/tb_alu_cfg.vhd|
+!s107 ../tb/tb_alu_cfg.vhd|
 !i113 1
 R6
 Etb_calc_ctrl
@@ -173,29 +469,29 @@ V]F6FLF@bzV14:U5[N1_U^3
 !s100 T@Rhz[[bWiGhSH<KaRE5;1
 R3
 32
-R9
+R13
 !i10b 1
-R10
+R14
 !s90 -reportprogress|300|../tb/tb_calc_ctrl_.vhd|
 !s107 ../tb/tb_calc_ctrl_.vhd|
 !i113 1
 R6
 Asim
-w1510876064
-Z18 DEx4 work 12 tb_calc_ctrl 0 22 ]F6FLF@bzV14:U5[N1_U^3
+w1510974495
+Z34 DEx4 work 12 tb_calc_ctrl 0 22 ]F6FLF@bzV14:U5[N1_U^3
 R1
 R2
 8../tb/tb_calc_ctrl_sim.vhd
 F../tb/tb_calc_ctrl_sim.vhd
 l83
 L36
-V7lcaU1fNTf3K?UeX<i:Tm0
-!s100 SkS5WY_DE8V`0WH9C^i=]3
+V@zi9<L:kC5L^_09g2iFR40
+!s100 aHgXn9<IzjWjlIX=fbRFe3
 R3
 32
-R9
+R13
 !i10b 1
-R10
+R14
 !s90 -reportprogress|300|../tb/tb_calc_ctrl_sim.vhd|
 !s107 ../tb/tb_calc_ctrl_sim.vhd|
 !i113 1
@@ -203,12 +499,12 @@ R6
 Ctb_calc_ctrl_cfg
 etb_calc_ctrl
 asim
-R7
+R12
 DCx4 work 17 calc_ctrl_rtl_cfg 0 22 o5IR=]i_OTJ_7_V@hOz;10
-DAx4 work 12 tb_calc_ctrl 3 sim 22 7lcaU1fNTf3K?UeX<i:Tm0
+DAx4 work 12 tb_calc_ctrl 3 sim 22 @zi9<L:kC5L^_09g2iFR40
 R1
 R2
-R18
+R34
 w1510863945
 R0
 8../tb/tb_calc_ctrl_cfg.vhd
@@ -219,11 +515,77 @@ V8Hnf3?8LaB4_bBj>H<gnP0
 !s100 ENo5n1T^Zz?bz:=>eJn5k1
 R3
 32
-R9
+R13
 !i10b 0
-R10
+R14
 !s90 -reportprogress|300|../tb/tb_calc_ctrl_cfg.vhd|
 !s107 ../tb/tb_calc_ctrl_cfg.vhd|
+!i113 1
+R6
+Etb_calc_top
+w1510975829
+R1
+R2
+R0
+8../tb/tb_calc_top_.vhd
+F../tb/tb_calc_top_.vhd
+l0
+L36
+VgR@[X[f=dF_Nc5^]S;Mk=3
+!s100 1lXTd2eeW5_`NPmWfUb^H1
+R3
+32
+Z35 !s110 1511118758
+!i10b 1
+Z36 !s108 1511118758.000000
+!s90 -reportprogress|300|../tb/tb_calc_top_.vhd|
+!s107 ../tb/tb_calc_top_.vhd|
+!i113 1
+R6
+Asim
+w1511118744
+Z37 DEx4 work 11 tb_calc_top 0 22 gR@[X[f=dF_Nc5^]S;Mk=3
+R1
+R2
+Z38 8../tb/tb_calc_top_sim.vhd
+Z39 F../tb/tb_calc_top_sim.vhd
+l61
+L36
+Vg=Y@<4ABlDQP3E_Zmg1_=2
+!s100 ]B;[a4^[HF5^e:YXGi<J]1
+R3
+32
+R35
+!i10b 1
+R36
+Z40 !s90 -reportprogress|300|../tb/tb_calc_top_sim.vhd|
+!s107 ../tb/tb_calc_top_sim.vhd|
+!i113 1
+R6
+Ctb_calc_top_cfg
+etb_calc_top
+asim
+R15
+DCx4 work 16 calc_top_rtl_cfg 0 22 Pff74=XYMz>4_IOnJQ>B70
+DAx4 work 11 tb_calc_top 3 sim 22 5Jmmo1Zf5V1MR^?X]ifi=3
+R1
+R2
+R37
+w1510976314
+R0
+8../tb/tb_calc_top_cfg.vhd
+F../tb/tb_calc_top_cfg.vhd
+l0
+L30
+V8<XOkVJYUCfWFzI@lggjO3
+!s100 ;Y]7mVffS3nkAfL:Z`h7Q0
+R3
+32
+!s110 1511018625
+!i10b 0
+!s108 1511018625.000000
+!s90 -reportprogress|300|../tb/tb_calc_top_cfg.vhd|
+!s107 ../tb/tb_calc_top_cfg.vhd|
 !i113 1
 R6
 Etb_io_ctrl
@@ -239,42 +601,42 @@ VTfO`K^OLSJKcCH4XW`1a83
 !s100 [z@BABS?e:bD?DLz9ecRI0
 R3
 32
-R11
+R31
 !i10b 1
-R12
+R32
 !s90 -reportprogress|300|../tb/tb_io_ctrl_.vhd|
 !s107 ../tb/tb_io_ctrl_.vhd|
 !i113 1
 R6
 Asim
 w1510863009
-Z19 DEx4 work 10 tb_io_ctrl 0 22 TfO`K^OLSJKcCH4XW`1a83
+Z41 DEx4 work 10 tb_io_ctrl 0 22 TfO`K^OLSJKcCH4XW`1a83
 R1
 R2
-R14
-R15
+R27
+R28
 l75
 L36
 V>M>=V>IzZk^R1aPI=o_h^0
 !s100 J08VPcaK;GHNnGQicZW9F1
 R3
 32
-R11
+R31
 !i10b 1
-R12
-R16
-R17
+R32
+R29
+R30
 !i113 1
 R6
 Ctb_io_ctrl_cfg
 etb_io_ctrl
 asim
-R13
+R25
 DCx4 work 15 io_ctrl_rtl_cfg 0 22 `4JHEzYISaU6[ZCl4dJoi0
 DAx4 work 10 tb_io_ctrl 3 sim 22 >M>=V>IzZk^R1aPI=o_h^0
 R1
 R2
-R19
+R41
 w1510862283
 R0
 8../tb/tb_io_ctrl_cfg.vhd
@@ -285,9 +647,9 @@ VZ1o<5JXB>RTS3VA_Mk4Ci3
 !s100 P@1n0VKR<2J?^JdTi_C:40
 R3
 32
-R11
+R31
 !i10b 0
-R12
+R32
 !s90 -reportprogress|300|../tb/tb_io_ctrl_cfg.vhd|
 !s107 ../tb/tb_io_ctrl_cfg.vhd|
 !i113 1

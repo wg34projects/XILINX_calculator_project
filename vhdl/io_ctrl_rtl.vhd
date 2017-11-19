@@ -130,6 +130,10 @@ begin
              pbsync <= pb_i;
              s_button <= '0';
 
+          else
+
+            pbsync <= (others => '0');          
+
            end if;
 
         end if;              

@@ -121,6 +121,7 @@ begin
 
   begin
 
+--  initial values and reset 1ms
     reset_i <= '1';
     swsync_i <= "0000000000000000";
     pbsync_i <= "0000";
@@ -128,73 +129,84 @@ begin
     result_i <= "0000000000000000";
     overflow_i <= '0';
     error_i <= '0';
---    optype_o <= (others => '0');
---    op1_o <= (others => '0');
---    op2_o <= (others => '0');
---    dig0_o <= (others => '0');
---    dig1_o <= (others => '0');
---    dig2_o <= (others => '0');
---    dig3_o <= (others => '0');
---    led_o <= (others => '0');
-
+    sign_i <= '0';
     wait for 1 ms;
 
+--  reset done
     reset_i <= '0';
-
     wait for 1 ms;
 
-    swsync_i <= "0000101010101010";
+--  first number for first operator
+    swsync_i <= "0000111111000000";
+    wait for 5 ms;
+
+--  second number for first operator
+    swsync_i <= "0000111111111111";
+    wait for 5 ms;
+
+--  third number for first operator = final
+    swsync_i <= "1000101010101010";
+    wait for 5 ms;
+
+--  confirm third number for first operator
     pbsync_i <= "1000";
     wait for 1 ms;
     pbsync_i <= "0000";
-    wait for 5 ms;
-
-    swsync_i <= "0000010101010101";
-    pbsync_i <= "1000";
-    wait for 1 ms;
-    pbsync_i <= "0000";
-    wait for 5 ms;
-
-    swsync_i <= "1001000000000000";
-    pbsync_i <= "1000";
-    wait for 1 ms;
-    pbsync_i <= "0000";
-    wait for 5 ms;
-
-
-    pbsync_i <= "1000";
-    wait for 1 ms;
-    pbsync_i <= "0000";
-    wait for 5 ms;
-
-    finished_i <= '1';
-    wait for 2 ms;
-
-    pbsync_i <= "1000";
-
     wait for 1 ms;
 
-    pbsync_i <= "0000";
-
-    wait for 5 ms;
-
-    swsync_i <= "1111111111111111";
-    pbsync_i <= "1000";
-    wait for 1 ms;
-    pbsync_i <= "0000";
-    wait for 5 ms;
-
+--  first number for second operator
     swsync_i <= "0000000000111111";
+    wait for 5 ms;
+
+--  second number for second operator
+    swsync_i <= "0000000000000000";
+    wait for 5 ms;
+
+--  first number for second operator
+    swsync_i <= "1010010101010101";
+    wait for 5 ms;
+
+--  confirm third number for second operator
     pbsync_i <= "1000";
     wait for 1 ms;
     pbsync_i <= "0000";
     wait for 5 ms;
 
-    swsync_i <= "0110000000000000";
+--  first operator
+    swsync_i <= "0000000000111111";
+    wait for 5 ms;
+
+--  second operator
+    swsync_i <= "1010111111111111";
+    wait for 5 ms;
+
+--  third operator
+    swsync_i <= "0101010000000011";
+    wait for 5 ms;
+
+--  confirm third operator
     pbsync_i <= "1000";
     wait for 1 ms;
     pbsync_i <= "0000";
+    wait for 1 ms;
+
+--  wait for finished from ALU
+    wait for 15 ms;
+    result_i <= "0000111010101101";
+    finished_i <= '1';
+    overflow_i <= '1';
+    error_i <= '1';
+    sign_i <= '0';
+    wait for 10 ns;
+    finished_i <= '0';
     wait for 20 ms;
+
+--  confirm and start new calculation
+    pbsync_i <= "1000";
+    wait for 1 ms;
+    pbsync_i <= "0000";
+    wait for 10 ms;
+
 
   end process run;
 

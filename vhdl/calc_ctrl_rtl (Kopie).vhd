@@ -258,49 +258,35 @@ begin
 
         if readystate_s = '1' then
 
-          nextstate_s <= displayResult;
+          if sign_i = '0' and overflow_i = '0' and error_i = '0' then
 
-        else
+            dig3_o <= makeBINtoHEX(result_i(15 downto 12));
+            dig2_o <= makeBINtoHEX(result_i(11 downto 8));
+            dig1_o <= makeBINtoHEX(result_i(7 downto 4));
+            dig0_o <= makeBINtoHEX(result_i(3 downto 0));
 
-          dig3_o <= NULLchar;
-          dig2_o <= NULLchar;
-          dig1_o <= NULLchar;
-          dig0_o <= NULLchar;
-          nextstate_s <= calculate;
+          elsif sign_i = '1' and overflow_i = '0' and error_i = '0' then
 
-        end if;
+            dig3_o <= SIGN;
+            dig2_o <= makeBINtoHEX(result_i(11 downto 8));
+            dig1_o <= makeBINtoHEX(result_i(7 downto 4));
+            dig0_o <= makeBINtoHEX(result_i(3 downto 0));
 
-      when displayResult =>
+          elsif error_i = '0' and overflow_i = '1' then
 
-        if sign_i = '0' and overflow_i = '0' and error_i = '0' then
+            dig3_o <= ochar;
+            dig2_o <= ochar;
+            dig1_o <= ochar;
+            dig0_o <= ochar;
 
-          dig3_o <= makeBINtoHEX(result_i(15 downto 12));
-          dig2_o <= makeBINtoHEX(result_i(11 downto 8));
-          dig1_o <= makeBINtoHEX(result_i(7 downto 4));
-          dig0_o <= makeBINtoHEX(result_i(3 downto 0));
+          elsif error_i = '1' then
 
-        elsif sign_i = '1' and overflow_i = '0' and error_i = '0' then
+            dig3_o <= NULLchar;
+            dig2_o <= Echar;
+            dig1_o <= Rchar;
+            dig0_o <= RChar;
 
-          dig3_o <= SIGN;
-          dig2_o <= makeBINtoHEX(result_i(11 downto 8));
-          dig1_o <= makeBINtoHEX(result_i(7 downto 4));
-          dig0_o <= makeBINtoHEX(result_i(3 downto 0));
-
-        elsif error_i = '0' and overflow_i = '1' then
-
-          dig3_o <= ochar;
-          dig2_o <= ochar;
-          dig1_o <= ochar;
-          dig0_o <= ochar;
-
-        elsif error_i = '1' then
-
-          dig3_o <= NULLchar;
-          dig2_o <= Echar;
-          dig1_o <= Rchar;
-          dig0_o <= RChar;
-
-        end if;
+          end if;
 
           if pbsync_i = "1000" then
 
@@ -315,9 +301,18 @@ begin
 
           else
 
-            nextstate_s <= displayResult;
+            nextstate_s <= calculate;
 
-          end if;      
+          end if;
+
+        else
+
+          dig3_o <= NULLchar;
+          dig2_o <= NULLchar;
+          dig1_o <= NULLchar;
+          dig0_o <= NULLchar;
+
+        end if;
    
       when others =>
 
