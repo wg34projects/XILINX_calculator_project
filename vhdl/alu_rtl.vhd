@@ -35,47 +35,47 @@ use IEEE.std_logic_arith.all;
 
 architecture rtl of alu is
 
-  signal oddNumber_s : std_logic_vector(11 downto 0);
-  signal workNumber1_s : std_logic_vector(11 downto 0);
-  signal workNumber2_s : std_logic_vector(11 downto 0);
+  signal oddNumber_s : std_logic_vector(15 downto 0);
+  signal workNumber1_s : std_logic_vector(15 downto 0);
+  signal workNumber2_s : std_logic_vector(15 downto 0);
   signal sqrtCount_s : std_logic_vector(15 downto 0);
   signal finished_s : std_logic;
-  constant pattern11 : std_logic_vector(11 downto 0) := "100000000000";
-  constant pattern10 : std_logic_vector(11 downto 0) := "010000000000";
-  constant pattern09 : std_logic_vector(11 downto 0) := "001000000000";
-  constant pattern08 : std_logic_vector(11 downto 0) := "000100000000";
-  constant pattern07 : std_logic_vector(11 downto 0) := "000010000000";
-  constant pattern06 : std_logic_vector(11 downto 0) := "000001000000";
-  constant pattern05 : std_logic_vector(11 downto 0) := "000000100000";
-  constant pattern04 : std_logic_vector(11 downto 0) := "000000010000";
-  constant pattern03 : std_logic_vector(11 downto 0) := "000000001000";
-  constant pattern02 : std_logic_vector(11 downto 0) := "000000000100";
-  constant pattern01 : std_logic_vector(11 downto 0) := "000000000010";
-  constant pattern00 : std_logic_vector(11 downto 0) := "000000000001";
+  constant pattern11 : std_logic_vector(15 downto 0) := "0000100000000000";
+  constant pattern10 : std_logic_vector(15 downto 0) := "0000010000000000";
+  constant pattern09 : std_logic_vector(15 downto 0) := "0000001000000000";
+  constant pattern08 : std_logic_vector(15 downto 0) := "0000000100000000";
+  constant pattern07 : std_logic_vector(15 downto 0) := "0000000010000000";
+  constant pattern06 : std_logic_vector(15 downto 0) := "0000000001000000";
+  constant pattern05 : std_logic_vector(15 downto 0) := "0000000000100000";
+  constant pattern04 : std_logic_vector(15 downto 0) := "0000000000010000";
+  constant pattern03 : std_logic_vector(15 downto 0) := "0000000000001000";
+  constant pattern02 : std_logic_vector(15 downto 0) := "0000000000000100";
+  constant pattern01 : std_logic_vector(15 downto 0) := "0000000000000010";
+  constant pattern00 : std_logic_vector(15 downto 0) := "0000000000000001";
 
 
 begin
 
   calculate : process (clk_i, reset_i, start_i, finished_s)
 
-  variable logdual11_v : std_logic_vector(11 downto 0);
-  variable logdual10_v : std_logic_vector(11 downto 0);
-  variable logdual09_v : std_logic_vector(11 downto 0);
-  variable logdual08_v : std_logic_vector(11 downto 0);
-  variable logdual07_v : std_logic_vector(11 downto 0);
-  variable logdual06_v : std_logic_vector(11 downto 0);
-  variable logdual05_v : std_logic_vector(11 downto 0);
-  variable logdual04_v : std_logic_vector(11 downto 0);
-  variable logdual03_v : std_logic_vector(11 downto 0);
-  variable logdual02_v : std_logic_vector(11 downto 0);
-  variable logdual01_v : std_logic_vector(11 downto 0);
-  variable logdual00_v : std_logic_vector(11 downto 0);
+  variable logdual11_v : std_logic_vector(15 downto 0);
+  variable logdual10_v : std_logic_vector(15 downto 0);
+  variable logdual09_v : std_logic_vector(15 downto 0);
+  variable logdual08_v : std_logic_vector(15 downto 0);
+  variable logdual07_v : std_logic_vector(15 downto 0);
+  variable logdual06_v : std_logic_vector(15 downto 0);
+  variable logdual05_v : std_logic_vector(15 downto 0);
+  variable logdual04_v : std_logic_vector(15 downto 0);
+  variable logdual03_v : std_logic_vector(15 downto 0);
+  variable logdual02_v : std_logic_vector(15 downto 0);
+  variable logdual01_v : std_logic_vector(15 downto 0);
+  variable logdual00_v : std_logic_vector(15 downto 0);
 
   begin
 
     if reset_i = '1' then
 
-      oddNumber_s <= "000000000001";
+      oddNumber_s <= "0000000000000001";
       workNumber1_s <= (others => '0');
       workNumber2_s <= (others => '0');
       logdual11_v := (others => '0');
@@ -99,12 +99,12 @@ begin
    
     elsif clk_i'event and clk_i = '1' then
 
-      workNumber1_s <= op1_i;
-      workNumber2_s <= op2_i;
+      workNumber1_s(11 downto 0) <= op1_i;
+      workNumber2_s(11 downto 0) <= op2_i;
 
       if finished_s = '1' and start_i = '0' then
 
-        oddNumber_s <= "000000000001";
+        oddNumber_s <= "0000000000000001";
         sqrtCount_s <= (others => '0');
         result_o <= (others => '0');
         finished_s <= '0';
@@ -118,9 +118,9 @@ begin
           when "0101" =>
 
             sqrtCount_s <= unsigned (sqrtCount_s) + 1;
-            workNumber1_s <= signed (workNumber1_s) - signed (oddNumber_s);
+            workNumber1_s <= unsigned (workNumber1_s) - unsigned (oddNumber_s);
 
-            if workNumber1_s(11) = '1' then
+            if workNumber1_s(15) = '1' then
  
               result_o <= unsigned (sqrtCount_s) - 1;
               finished_s <= '1';
@@ -153,77 +153,80 @@ begin
             logdual01_v := workNumber1_s and pattern01;
             logdual00_v := workNumber1_s and pattern00;
 
-            if logdual11_v /= "000000000000" then
+            if logdual11_v /= "0000000000000000" then
 
               result_o <= "0000000000001011";
+              error_o <= '0';
 
-            elsif logdual10_v /= "000000000000" then
+            elsif logdual10_v /= "0000000000000000" then
 
               result_o <= "0000000000001010";
+              error_o <= '0';
         
-            elsif logdual09_v /= "000000000000" then
+            elsif logdual09_v /= "0000000000000000" then
 
               result_o <= "0000000000001001";
+              error_o <= '0';
 
-
-            elsif logdual08_v /= "000000000000" then
+            elsif logdual08_v /= "0000000000000000" then
 
               result_o <= "0000000000001000";
+              error_o <= '0';
 
-
-            elsif logdual07_v /= "000000000000" then
+            elsif logdual07_v /= "0000000000000000" then
 
               result_o <= "0000000000000111";
+              error_o <= '0';
 
-
-            elsif logdual06_v /= "000000000000" then
+            elsif logdual06_v /= "0000000000000000" then
 
               result_o <= "0000000000000110";
+              error_o <= '0';
 
-
-            elsif logdual05_v /= "000000000000" then
+            elsif logdual05_v /= "0000000000000000" then
 
               result_o <= "0000000000000101";
+              error_o <= '0';
 
-
-            elsif logdual04_v /= "000000000000" then
+            elsif logdual04_v /= "0000000000000000" then
 
               result_o <= "0000000000000100";
+              error_o <= '0';
 
-
-            elsif logdual03_v /= "000000000000" then
+            elsif logdual03_v /= "0000000000000000" then
 
               result_o <= "0000000000000011";
+              error_o <= '0';
 
-
-            elsif logdual02_v /= "000000000000" then
+            elsif logdual02_v /= "0000000000000000" then
 
               result_o <= "0000000000000010";
+              error_o <= '0';
 
-
-            elsif logdual01_v /= "000000000000" then
+            elsif logdual01_v /= "0000000000000000" then
 
               result_o <= "0000000000000001";
+              error_o <= '0';
 
-
-            elsif logdual00_v /= "000000000000" then
+            elsif logdual00_v /= "0000000000000000" then
 
               result_o <= "0000000000000000";
+              error_o <= '1';
 
             else
  
               result_o <= "0000000000000000";
+              error_o <= '1';
 
             end if;
 
             finished_s <= '1';
-            error_o <= '0';
             overflow_o <= '0';
             sign_o <= '0';
 
           when "1010" =>
 
-            result_o(11 downto 0) <= workNumber1_s or workNumber2_s;
+            result_o(11 downto 0) <= workNumber1_s(11 downto 0) or workNumber2_s(11 downto 0);
             finished_s <= '1';
             error_o <= '0';
             overflow_o <= '0';

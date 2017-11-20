@@ -36,9 +36,8 @@ use IEEE.std_logic_arith.all;
 architecture rtl of calc_ctrl is
 
   type states is (enterOP1, enterOP2, enterTYP, calculate, displayResult);
-  signal presentstate_s : states;
-  signal nextstate_s : states;
-  signal buttonstate_s : std_logic;
+  signal state_s : states;
+  signal buttonstate_s : std_logic_vector(1 downto 0);
   signal readystate_s : std_logic;
   constant OP1start : std_logic_vector(7 downto 0) := "10011110";
   constant OP2start : std_logic_vector(7 downto 0) := "00100100";
@@ -49,7 +48,7 @@ architecture rtl of calc_ctrl is
   constant rchar : std_logic_vector(7 downto 0) := "11110101";
   constant NULLchar : std_logic_vector(7 downto 0) := "11111111";
   constant Schar : std_logic_vector(7 downto 0) := "01001001";
-  constant qchar : std_logic_vector(7 downto 0) := "00011011";
+  constant qchar : std_logic_vector(7 downto 0) := "00011001";
   constant Lchar : std_logic_vector(7 downto 0) := "11100011";
   constant ochar : std_logic_vector(7 downto 0) := "11000101";
   constant bchar : std_logic_vector(7 downto 0) := "11000001";
@@ -67,18 +66,18 @@ architecture rtl of calc_ctrl is
       when "0000" => hexnumberResult := "00000011"; -- 0
       when "0001" => hexnumberResult := "10011111"; -- 1
       when "0010" => hexnumberResult := "00100101"; -- 2
-      when "0011" => hexnumberResult := "10011001"; -- 3
+      when "0011" => hexnumberResult := "00001101"; -- 3
       when "0100" => hexnumberResult := "10011001"; -- 4
       when "0101" => hexnumberResult := "01001001"; -- 5
-      when "0110" => hexnumberResult := "01000001"; -- 6
-      when "0111" => hexnumberResult := "00011101"; -- 7
+      when "0110" => hexnumberResult := "11000001"; -- 6
+      when "0111" => hexnumberResult := "00011111"; -- 7
       when "1000" => hexnumberResult := "00000001"; -- 8
-      when "1001" => hexnumberResult := "00001001"; -- 9
+      when "1001" => hexnumberResult := "00011001"; -- 9
       when "1010" => hexnumberResult := "00010001"; -- A
       when "1011" => hexnumberResult := "11000001"; -- b
       when "1100" => hexnumberResult := "11100101"; -- c
       when "1101" => hexnumberResult := "10000101"; -- d
-      when "1110" => hexnumberResult := "01100001"; -- e
+      when "1110" => hexnumberResult := "01100001"; -- E
       when "1111" => hexnumberResult := "01110001"; -- f
       when others => hexnumberResult := "11111111"; -- no led on
 
@@ -132,125 +131,139 @@ architecture rtl of calc_ctrl is
 
 begin
 
-  p_calcFSM_sequential : process (clk_i, reset_i, finished_i)
+  p_calcFSM : process (clk_i, reset_i, pbsync_i, swsync_i, readystate_s, result_i, sign_i, overflow_i, error_i, buttonstate_s)
 
   begin
 
     if reset_i = '1' then
 
-      presentstate_s <= enterOP1;
+      state_s <= enterOP1;
       readystate_s <= '0';
       led_o <= "0000000000000000";
+      dig0_o <= (others => '0');
+      dig1_o <= (others => '0');
+      dig2_o <= (others => '0');
+      dig3_o <= (others => '0');
+      op1_o <= (others => '0');
+      op2_o <= (others => '0');
+      optype_o <= (others => '0');
+      start_o <= '0';
+      buttonstate_s <= "00";
       
     elsif clk_i'event and clk_i = '1' then
 
-      presentstate_s <= nextstate_s;
-      
         if finished_i = '1' and readystate_s = '0' then
 
           readystate_s <= '1';
-          led_o <= "1000000000000000";
+          led_o <= "0000000000000001";
 
-        elsif nextstate_s = enterOP1 then
+        elsif state_s = enterOP1 then
 
           readystate_s <= '0';
           led_o <= "0000000000000000";
 
         end if;
 
-    end if;
-
-  end process p_calcFSM_sequential;
-
-  p_calcFSM_combinatorial : process (presentstate_s, pbsync_i, swsync_i, readystate_s)
-
-  begin
-
-    case presentstate_s is
+    case state_s is
 
       when enterOP1 =>
 
-        dig0_o <= (others => '0');
-        dig1_o <= (others => '0');
-        dig2_o <= (others => '0');
-        dig3_o <= (others => '0');
-        op1_o <= (others => '0');
-        op2_o <= (others => '0');
-        optype_o <= (others => '0');
-        start_o <= '0';
-        buttonstate_s <= '0';
-
+        led_o <= "0000000000000000";
         dig3_o <= OP1start;
         dig2_o <= makeBINtoHEX(swsync_i(11 downto 8));
         dig1_o <= makeBINtoHEX(swsync_i(7 downto 4));
         dig0_o <= makeBINtoHEX(swsync_i(3 downto 0));
 		
-        if pbsync_i = "1000" then
+        if pbsync_i = "1000" and buttonstate_s = "00" then
 
-          buttonstate_s <= '1';
+			buttonstate_s(1) <= buttonstate_s(0);
+			buttonstate_s(0) <= '1';
 
         end if;
 
-        if pbsync_i = "0000" and buttonstate_s = '1' then
+        if pbsync_i = "0000" and buttonstate_s = "01" then
+
+			buttonstate_s(1) <= buttonstate_s(0);
+			buttonstate_s(0) <= '1';
+
+        end if;
+
+        if buttonstate_s = "11" then
 
           op1_o <= swsync_i(11 downto 0);
-          buttonstate_s <= '0';
-          nextstate_s <= enterOP2;
+          buttonstate_s <= "00";
+          state_s <= enterOP2;
 
         else
 
-          nextstate_s <= enterOP1;
+          state_s <= enterOP1;
 
         end if;
 
       when enterOP2 =>
 
-        buttonstate_s <= '0';
-
+        led_o <= "0000000000000000";
         dig3_o <= OP2start;
         dig1_o <= makeBINtoHEX(swsync_i(11 downto 8));
         dig1_o <= makeBINtoHEX(swsync_i(7 downto 4));
         dig0_o <= makeBINtoHEX(swsync_i(3 downto 0));
 
-        if pbsync_i = "1000" then
+        if pbsync_i = "1000" and buttonstate_s = "00" then
 
-          buttonstate_s <= '1';
+			buttonstate_s(1) <= buttonstate_s(0);
+			buttonstate_s(0) <= '1';
 
         end if;
 
-        if pbsync_i = "0000" and buttonstate_s = '1' then
+        if pbsync_i = "0000" and buttonstate_s = "01" then
+
+			buttonstate_s(1) <= buttonstate_s(0);
+			buttonstate_s(0) <= '1';
+
+        end if;
+
+        if buttonstate_s = "11" then
 
           op2_o <= swsync_i(11 downto 0);
-          buttonstate_s <= '0';
-          nextstate_s <= enterTYP;
+          buttonstate_s <= "00";
+          state_s <= enterTYP;
 
         else
 
-          nextstate_s <= enterOP2;
+          state_s <= enterOP2;
 
         end if;
 
       when enterTYP =>
 
+        led_o <= "0000000000000000";
         dig3_o <= TYPstart;
         decodeOperator(dig2_o, dig1_o, dig0_o, swsync_i(15 downto 12));
 
-        if pbsync_i = "1000" then
+        if pbsync_i = "1000" and buttonstate_s = "00" then
 
-          buttonstate_s <= '1';
+			buttonstate_s(1) <= buttonstate_s(0);
+			buttonstate_s(0) <= '1';
 
         end if;
 
-        if pbsync_i = "0000" and buttonstate_s = '1' then
+        if pbsync_i = "0000" and buttonstate_s = "01" then
+
+			buttonstate_s(1) <= buttonstate_s(0);
+			buttonstate_s(0) <= '1';
+
+        end if;
+
+        if buttonstate_s = "11" then
 
           optype_o <= swsync_i(15 downto 12);
-          buttonstate_s <= '0';
-          nextstate_s <= calculate;
+          buttonstate_s <= "00";
+          state_s <= calculate;
           start_o <= '1';
 
         else
 
-          nextstate_s <= enterTYP;
+          state_s <= enterTYP;
 
         end if;
 
@@ -258,7 +271,7 @@ begin
 
         if readystate_s = '1' then
 
-          nextstate_s <= displayResult;
+          state_s <= displayResult;
 
         else
 
@@ -266,7 +279,7 @@ begin
           dig2_o <= NULLchar;
           dig1_o <= NULLchar;
           dig0_o <= NULLchar;
-          nextstate_s <= calculate;
+          state_s <= calculate;
 
         end if;
 
@@ -302,29 +315,49 @@ begin
 
         end if;
 
-          if pbsync_i = "1000" then
+          if pbsync_i = "1000" and buttonstate_s = "00" then
 
-            buttonstate_s <= '1';
+			buttonstate_s(1) <= buttonstate_s(0);
+			buttonstate_s(0) <= '1';
 
           end if;
 
-          if pbsync_i = "0000" and buttonstate_s = '1' then
+          if pbsync_i = "0000" and buttonstate_s = "01" then
 
-            buttonstate_s <= '0';
-            nextstate_s <= enterOP1;
+			buttonstate_s(1) <= buttonstate_s(0);
+			buttonstate_s(0) <= '1';
+
+          end if;
+
+          if buttonstate_s = "11" then
+
+            buttonstate_s <= "00";
+            state_s <= enterOP1;
+            readystate_s <= '0';
+            led_o <= "0000000000000000";
+            dig0_o <= (others => '0');
+            dig1_o <= (others => '0');
+            dig2_o <= (others => '0');
+            dig3_o <= (others => '0');
+            op1_o <= (others => '0');
+            op2_o <= (others => '0');
+            optype_o <= (others => '0');
+            start_o <= '0';
 
           else
 
-            nextstate_s <= displayResult;
+            state_s <= displayResult;
 
           end if;      
    
       when others =>
 
-        nextstate_s <= enterOP1;
+        state_s <= enterOP1;
 
     end case;
 
-  end process p_calcFSM_combinatorial;
+  end if;
+
+  end process p_calcFSM;
 
 end rtl;

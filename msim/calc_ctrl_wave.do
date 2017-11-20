@@ -18,10 +18,9 @@ add wave -noupdate -height 30 -format Hexadecimal -color yellow -format Logic /t
 add wave -noupdate -height 30 -format Hexadecimal -color yellow -format Logic /tb_calc_ctrl/op2_o
 add wave -noupdate -height 30 -color yellow -format Logic /tb_calc_ctrl/optype_o
 add wave -noupdate -height 30 -color yellow -format Logic /tb_calc_ctrl/start_o
-add wave -noupdate -height 30 -format Logic /tb_calc_ctrl/i_calc_ctrl/nextstate_s
-add wave -noupdate -height 30 -format Logic /tb_calc_ctrl/i_calc_ctrl/presentstate_s
-add wave -noupdate -height 30 -format Logic /tb_calc_ctrl/i_calc_ctrl/buttonstate_s
+add wave -noupdate -height 30 -format Logic /tb_calc_ctrl/i_calc_ctrl/state_s
 add wave -noupdate -height 30 -format Logic /tb_calc_ctrl/i_calc_ctrl/readystate_s
+add wave -noupdate -height 30 -format Logic /tb_calc_ctrl/i_calc_ctrl/buttonstate_s
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {0 ps}
 WaveRestoreZoom {0 ps} {1 ns}

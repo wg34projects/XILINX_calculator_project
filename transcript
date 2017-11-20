@@ -1,0 +1,232 @@
+cd msim
+do 41_compile.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/io_ctrl_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity io_ctrl
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/io_ctrl_rtl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling architecture rtl of io_ctrl
+# -- Loading entity io_ctrl
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/calc_ctrl_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity calc_ctrl
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/calc_ctrl_rtl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling architecture rtl of calc_ctrl
+# -- Loading entity calc_ctrl
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/alu_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity alu
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/alu_rtl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling architecture rtl of alu
+# -- Loading entity alu
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/calc_top_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity calc_top
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/calc_top_rtl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling architecture struc of calc_top
+# -- Loading entity calc_top
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../tb/tb_calc_top_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_calc_top
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:23 on Nov 19,2017
+# vcom -reportprogress 300 ../tb/tb_calc_top_sim.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling architecture sim of tb_calc_top
+# -- Loading entity tb_calc_top
+# End time: 20:28:23 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do 42_sim.do
+# vsim -t ns -novopt -lib work work.tb_calc_top 
+# Start time: 20:28:25 on Nov 19,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_calc_top(sim)
+# Loading ieee.std_logic_arith(body)
+# Loading work.calc_top(struc)
+# Loading work.io_ctrl(rtl)
+# Loading work.calc_ctrl(rtl)
+# Loading work.alu(rtl)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+do 41_compile.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/io_ctrl_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity io_ctrl
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/io_ctrl_rtl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling architecture rtl of io_ctrl
+# -- Loading entity io_ctrl
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/calc_ctrl_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity calc_ctrl
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/calc_ctrl_rtl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling architecture rtl of calc_ctrl
+# -- Loading entity calc_ctrl
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/alu_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity alu
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/alu_rtl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling architecture rtl of alu
+# -- Loading entity alu
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/calc_top_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity calc_top
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../vhdl/calc_top_rtl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling architecture struc of calc_top
+# -- Loading entity calc_top
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../tb/tb_calc_top_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_calc_top
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:36:31 on Nov 19,2017
+# vcom -reportprogress 300 ../tb/tb_calc_top_sim.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling architecture sim of tb_calc_top
+# -- Loading entity tb_calc_top
+# End time: 20:36:31 on Nov 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do 42_sim.do
+# End time: 20:36:34 on Nov 19,2017, Elapsed time: 0:08:09
+# Errors: 0, Warnings: 1
+# vsim -t ns -novopt -lib work work.tb_calc_top 
+# Start time: 20:36:34 on Nov 19,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_calc_top(sim)
+# Loading ieee.std_logic_arith(body)
+# Loading work.calc_top(struc)
+# Loading work.io_ctrl(rtl)
+# Loading work.calc_ctrl(rtl)
+# Loading work.alu(rtl)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+quit -sim
+# End time: 20:41:31 on Nov 19,2017, Elapsed time: 0:04:57
+# Errors: 0, Warnings: 1

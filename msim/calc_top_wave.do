@@ -24,7 +24,7 @@ add wave -noupdate -height 30 -color magenta -format Decimal /tb_calc_top/i_calc
 add wave -noupdate -height 30 -color magenta -format Logic /tb_calc_top/i_calc_top/optype
 add wave -noupdate -height 30 -color magenta -format Logic /tb_calc_top/i_calc_top/start
 add wave -noupdate -height 30 -color yellow -format Logic /tb_calc_top/i_calc_top/i_calc_ctrl/buttonstate_s
-add wave -noupdate -height 30 -color yellow -format Logic /tb_calc_top/i_calc_top/i_calc_ctrl/presentstate_s 
+add wave -noupdate -height 30 -color yellow -format Logic /tb_calc_top/i_calc_top/i_calc_ctrl/state_s 
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {0 ps}
 WaveRestoreZoom {0 ps} {1 ns}
