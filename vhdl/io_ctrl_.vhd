@@ -1,28 +1,32 @@
---
+--------------------------------------------------------------------------------
 -- FHTW - BEL3 - DSD - calculator project
 --
---
 -- Author:	Helmut Resch
---			el16b005
---			BEL3
+--			el16b005 BEL3 no. 15 in attendance list
+--          User interface Type "A", square root, logdual, or, ror
 --
 -- File:	io_ctrl_.vhd
 --
 -- Version history:
 --
--- v_0.1	13.11.2017	IO Ctrl + Testbench
--- v_0.2	15.11.2017	Calc Ctrl + Testbench
+-- v_0.1    14.11.2017	IO Ctrl + Testbench
+-- v_0.2    15.11.2017	Calc Ctrl + Testbench
+-- v_0.3	16.11.2017	ALU + Testbench
+-- v_0.4	17.11.2017	Top Level Design + Testbench
+-- v_0.5	20.11.2017	Synthesis + Implementation
+--                      Solve XILINX warnings
+-- v_0.6    21.11.2017  Synthesis and check calculations
+--                      Solve error square root
+-- v_1.0    24.11.2017  Final Specification check and Documentation
 --
 -- Design Unit:	IO Control Unit
 --				Entity
 --
 -- Description:	The IO Control unit is part of the calculator project.
---				It manages the interface to the 7-segment displays,
+--				It manages the interface of the 7-segment displays,
 --				the LEDs, the push buttons and the switches of the
 --				Digilent Basys3 FPGA board.
---
---
--- below doxygen documentation blocks
+--------------------------------------------------------------------------------
 
 --! @file io_ctrl_.vhd
 --! @brief IO Control Unit Entity
@@ -39,7 +43,7 @@ entity io_ctrl is
   (
     clk_i : in std_logic;
     reset_i : in std_logic;
-    dig0_i : in std_logic_vector(7 downto 0); --!binary representation for digits segement 0
+    dig0_i : in std_logic_vector(7 downto 0);
     dig1_i : in std_logic_vector(7 downto 0);
     dig2_i : in std_logic_vector(7 downto 0);
     dig3_i : in std_logic_vector(7 downto 0);

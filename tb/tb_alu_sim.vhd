@@ -1,36 +1,39 @@
---
+--------------------------------------------------------------------------------
 -- FHTW - BEL3 - DSD - calculator project
 --
---
 -- Author:	Helmut Resch
---			el16b005
---			BEL3
+--			el16b005 BEL3 no. 15 in attendance list
+--          User interface Type "A", square root, logdual, or, ror
 --
--- File:	tb_calc_ctrl_sim.vhd
+-- File:	tb_alu_sim.vhd
 --
 -- Version history:
 --
--- v_0.1	13.11.2017	IO Ctrl + Testbench
--- v_0.2	15.11.2017	Calc Ctrl + Testbench
+-- v_0.1    14.11.2017	IO Ctrl + Testbench
+-- v_0.2    15.11.2017	Calc Ctrl + Testbench
+-- v_0.3	16.11.2017	ALU + Testbench
+-- v_0.4	17.11.2017	Top Level Design + Testbench
+-- v_0.5	20.11.2017	Synthesis + Implementation
+--                      Solve XILINX warnings
+-- v_0.6    21.11.2017  Synthesis and check calculations
+--                      Solve error square root
+-- v_1.0    24.11.2017  Final Specification check and Documentation
 --
--- Design Unit:	Calculcator Control Unit Testbench
---				Architecture
+-- Design Unit:	ALU Testbench
+--				Architecture SIM
 --
--- Description:	The Calculcator Control unit is part of the calculator project.
---				It manages the interface to the 7-segment displays,
---				the LEDs, the push buttons and the switches of the
---				Digilent Basys3 FPGA board.
---
---
--- below doxygen documentation blocks
+-- Description:	The ALU unit is part of the calculator project.
+--              The ALU provides all necessary calculations and handling of
+--              error, overflow, sign, finished and result
+--------------------------------------------------------------------------------
 
---! @file tb_calc_ctrl_sim.vhd
---! @brief Calculcator Control Unit Testbench Architecture
+--! @file tb_alu_sim.vhd
+--! @brief ALU Testbench Architecture SIM
 
 library IEEE;
 use IEEE.std_logic_1164.all;
 
---! @brief Calculcator Control Unit Testbench Architecture
+--! @brief ALU Testbench Architecture SIM
 --! @details The Calculcator Control uniti part of the calculator project.
 
 architecture sim of tb_alu is
@@ -85,6 +88,9 @@ begin
     start_i => start_i
   );
 
+--! @brief ALU Testbench Architecture SIM
+--! @details Process to generate 100MHz clock
+
   p_clk : process
 
   begin
@@ -96,49 +102,64 @@ begin
 
   end process p_clk;
 
+--! @brief ALU Testbench Architecture SIM
+--! @details Process to generate misc. stimuli
+
   run : process
 
   begin
 
+-- reset values
+
     reset_i <= '1';
     start_i <= '0';
-
-    op1_i <= "111111111111";
-    --op1_i <= "011111111111";
-    op2_i <= "111111111111";
-    optype_i <= "0101";
+    op1_i <= "000000000000";
+    op2_i <= "000000000000";
+    optype_i <= "0110";
     wait for 1 ms;
+
+-- de assert reset
+
     reset_i <= '0';
     wait for 1 ms;
-    start_i <= '1';
-    wait for 5 ms;
-    start_i <= '0';
+
+-- squareroot
+
+    op1_i <= "101010101010";
+    op2_i <= "010101010101";
+    optype_i <= "0110";
     wait for 1 ms;
+    start_i <= '1';
+    wait for 10 ns; -- start for 1 impulse
+    start_i <= '0';
+    wait for 5 ms;
+
+-- logdual
  
-    op1_i <= "001011011101";
     optype_i <= "0111";
     wait for 1 ms;
     start_i <= '1';
+    wait for 10 ns; -- start for 1 impulse
+    start_i <= '0';
     wait for 5 ms;
-    start_i <= '0';  
-    wait for 1 ms;
 
-    op1_i <= "111111000000";
-    op1_i <= "000000000000";
+-- or
+
     optype_i <= "1010";
     wait for 1 ms;
     start_i <= '1';
+    wait for 10 ns; -- start for 1 impulse
+    start_i <= '0';
     wait for 5 ms;
-    start_i <= '0';  
-    wait for 1 ms;
 
-    op1_i <= "000111111110";
+-- ror
+
     optype_i <= "1101";
     wait for 1 ms;
     start_i <= '1';
+    wait for 10 ns; -- start for 1 impulse
+    start_i <= '0';
     wait for 5 ms;
-    start_i <= '0';  
-    wait for 1 ms;
 
   end process run;
 

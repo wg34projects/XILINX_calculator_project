@@ -1,19 +1,23 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -height 30 -color cyan -format Logic /tb_io_ctrl/clk_i
-add wave -noupdate -height 30 -color red -format Logic /tb_io_ctrl/reset_i
+add wave -divider -height 30 "CLK, RESET"
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/clk_i
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/reset_i
+add wave -divider -height 30 "INPUT"
 add wave -noupdate -height 30 -format Logic /tb_io_ctrl/dig0_i
 add wave -noupdate -height 30 -format Logic /tb_io_ctrl/dig1_i
 add wave -noupdate -height 30 -format Logic /tb_io_ctrl/dig2_i
 add wave -noupdate -height 30 -format Logic /tb_io_ctrl/dig3_i
-add wave -noupdate -height 30 -color blue -format Logic /tb_io_ctrl/led_i
-add wave -noupdate -height 30 -color blue -format Logic /tb_io_ctrl/led_o
-add wave -noupdate -height 30 -color green -format Logic /tb_io_ctrl/sw_i
-add wave -noupdate -height 30 -color green -format Logic /tb_io_ctrl/pb_i
-add wave -noupdate -height 30 -color magenta -format Logic /tb_io_ctrl/ss_o
-add wave -noupdate -height 30 -color magenta -format Logic /tb_io_ctrl/ss_sel_o
-add wave -noupdate -height 30 -color yellow -format Logic /tb_io_ctrl/swsync_o
-add wave -noupdate -height 30 -color yellow -format Logic /tb_io_ctrl/pbsync_o
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/led_i
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/sw_i
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/pb_i
+add wave -divider -height 30 "OUTPUT"
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/ss_o
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/ss_sel_o
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/swsync_o
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/pbsync_o
+add wave -noupdate -height 30 -format Logic /tb_io_ctrl/led_o
+add wave -divider -height 30 "INTERNAL SIGNALS"
 add wave -noupdate -height 30 -format Unsigned /tb_io_ctrl/i_io_ctrl/s_enctr
 add wave -noupdate -height 30 -format Logic /tb_io_ctrl/i_io_ctrl/s_1khzen
 add wave -noupdate -height 30 -format Logic /tb_io_ctrl/i_io_ctrl/swsync

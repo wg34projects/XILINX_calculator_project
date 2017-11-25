@@ -1,64 +1,71 @@
---
+--------------------------------------------------------------------------------
 -- FHTW - BEL3 - DSD - calculator project
 --
---
 -- Author:	Helmut Resch
---			el16b005
---			BEL3
+--			el16b005 BEL3 no. 15 in attendance list
+--          User interface Type "A", square root, logdual, or, ror
 --
--- File:	calc_ctrl_rtl.vhd
+-- File:	alu_rtl.vhd
 --
 -- Version history:
 --
--- v_0.1	13.11.2017	IO Ctrl + Testbench
--- v_0.2	15.11.2017	Calc Ctrl + Testbench
+-- v_0.1    14.11.2017	IO Ctrl + Testbench
+-- v_0.2    15.11.2017	Calc Ctrl + Testbench
+-- v_0.3	16.11.2017	ALU + Testbench
+-- v_0.4	17.11.2017	Top Level Design + Testbench
+-- v_0.5	20.11.2017	Synthesis + Implementation
+--                      Solve XILINX warnings
+-- v_0.6    21.11.2017  Synthesis and check calculations
+--                      Solve error square root
+-- v_1.0    24.11.2017  Final Specification check and Documentation
 --
--- Design Unit:	Calculator Control Unit
---				Architecture
+-- Design Unit:	ALU
+--				Architecture RTL
 --
--- Description:	The Calculator Control unit is part of the calculator project.
---				The unit includes a FSM for the calculation itself and the 
---              decoder for the 7 segment displays.
---
---
--- below doxygen documentation blocks
+-- Description:	The ALU unit is part of the calculator project.
+--              The ALU provides all necessary calculations and handling of
+--              error, overflow, sign, finished and result
+--------------------------------------------------------------------------------
 
---! @file calc_ctrl_rtl.vhd
---! @brief Calculator Control Unit Architecture
+--! @file alu_rtl.vhd
+--! @brief ALU Architecture RTL
 
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 
---! @brief Calclator Control Unit Architecture
---! @details The Calulator Control unit is part of the calculator project.
+--! @brief ALU Architecture RTL
+--! @details The ALU is part of the calculator project.
 
 architecture rtl of alu is
 
-  signal oddNumber_s : std_logic_vector(15 downto 0);
-  signal workNumber1_s : std_logic_vector(15 downto 0);
-  signal workNumber2_s : std_logic_vector(15 downto 0);
-  signal sqrtCount_s : std_logic_vector(15 downto 0);
-  signal finished_s : std_logic;
-  constant pattern11 : std_logic_vector(15 downto 0) := "0000100000000000";
-  constant pattern10 : std_logic_vector(15 downto 0) := "0000010000000000";
-  constant pattern09 : std_logic_vector(15 downto 0) := "0000001000000000";
-  constant pattern08 : std_logic_vector(15 downto 0) := "0000000100000000";
-  constant pattern07 : std_logic_vector(15 downto 0) := "0000000010000000";
-  constant pattern06 : std_logic_vector(15 downto 0) := "0000000001000000";
-  constant pattern05 : std_logic_vector(15 downto 0) := "0000000000100000";
-  constant pattern04 : std_logic_vector(15 downto 0) := "0000000000010000";
-  constant pattern03 : std_logic_vector(15 downto 0) := "0000000000001000";
-  constant pattern02 : std_logic_vector(15 downto 0) := "0000000000000100";
-  constant pattern01 : std_logic_vector(15 downto 0) := "0000000000000010";
-  constant pattern00 : std_logic_vector(15 downto 0) := "0000000000000001";
-
+  signal oddNumber_s : std_logic_vector(15 downto 0); -- odd number counter for squareroot algorithm
+  signal workNumber1_s : std_logic_vector(15 downto 0); -- signal for store 12bit operand1 in 16bit workNumber1
+  signal workNumber2_s : std_logic_vector(15 downto 0); -- signal for store 12bit operand2 in 16bit workNumber2
+  signal cntval : std_logic_vector(15 downto 0); -- counter for squareroot algorithm
+  signal finished_s : std_logic; -- internal finished signal
+  signal run_s : std_logic; -- internal run signal to store start signal
+  constant C_PATTERN11 : std_logic_vector(15 downto 0) := "0000100000000000"; -- bit patterns for logdual
+  constant C_PATTERN10 : std_logic_vector(15 downto 0) := "0000010000000000";
+  constant C_PATTERN09 : std_logic_vector(15 downto 0) := "0000001000000000";
+  constant C_PATTERN08 : std_logic_vector(15 downto 0) := "0000000100000000";
+  constant C_PATTERN07 : std_logic_vector(15 downto 0) := "0000000010000000";
+  constant C_PATTERN06 : std_logic_vector(15 downto 0) := "0000000001000000";
+  constant C_PATTERN05 : std_logic_vector(15 downto 0) := "0000000000100000";
+  constant C_PATTERN04 : std_logic_vector(15 downto 0) := "0000000000010000";
+  constant C_PATTERN03 : std_logic_vector(15 downto 0) := "0000000000001000";
+  constant C_PATTERN02 : std_logic_vector(15 downto 0) := "0000000000000100";
+  constant C_PATTERN01 : std_logic_vector(15 downto 0) := "0000000000000010";
+  constant C_PATTERN00 : std_logic_vector(15 downto 0) := "0000000000000001";
 
 begin
 
-  calculate : process (clk_i, reset_i, start_i, finished_s)
+--! @brief ALU Architecture RTL
+--! @details main calculate process including combinatorial logic for operation type
 
-  variable logdual11_v : std_logic_vector(15 downto 0);
+  calculate : process (clk_i, reset_i, start_i, finished_s, run_s, op1_i, op2_i, optype_i)
+
+  variable logdual11_v : std_logic_vector(15 downto 0); -- variables to store result of bit test for logdual
   variable logdual10_v : std_logic_vector(15 downto 0);
   variable logdual09_v : std_logic_vector(15 downto 0);
   variable logdual08_v : std_logic_vector(15 downto 0);
@@ -75,7 +82,7 @@ begin
 
     if reset_i = '1' then
 
-      oddNumber_s <= "0000000000000001";
+      oddNumber_s <= "0000000000000001";  -- first odd number = 1
       workNumber1_s <= (others => '0');
       workNumber2_s <= (others => '0');
       logdual11_v := (others => '0');
@@ -90,46 +97,53 @@ begin
       logdual02_v := (others => '0');
       logdual01_v := (others => '0');
       logdual00_v := (others => '0');
-      sqrtCount_s <= (others => '0');
+      cntval <= (others => '0');
       result_o <= (others => '0');
       finished_s <= '0';
       error_o <= '0';
       overflow_o <= '0';
       sign_o <= '0';
+      run_s <= '0';
    
     elsif clk_i'event and clk_i = '1' then
 
-      workNumber1_s(11 downto 0) <= op1_i;
-      workNumber2_s(11 downto 0) <= op2_i;
+      workNumber1_s(11 downto 0) <= op1_i;  -- make 16bit from 12bit operand1
+      workNumber2_s(11 downto 0) <= op2_i;  -- make 16bit from 12bit operand2
 
-      if finished_s = '1' and start_i = '0' then
-
+      if finished_s = '1' and run_s = '0' then  -- after finished calculation reset
+  
         oddNumber_s <= "0000000000000001";
-        sqrtCount_s <= (others => '0');
-        result_o <= (others => '0');
-        finished_s <= '0';
+        cntval <= (others => '0');
+        finished_s <= '0';       
 
       end if;
 
-      if start_i = '1' and finished_s = '0' then
+      if start_i = '1' then -- store start signal from calculator control
 
-        case optype_i is
+        run_s <= '1';
 
-          when "0101" =>
+      end if;
 
-            sqrtCount_s <= unsigned (sqrtCount_s) + 1;
-            workNumber1_s <= unsigned (workNumber1_s) - unsigned (oddNumber_s);
+      if run_s = '1' then -- if start resp. run the calculation can start
 
-            if workNumber1_s(15) = '1' then
+        case optype_i is -- combinatorial logic to select type of calculation
+
+          when "0110" => -- squareroot
+
+            cntval <= unsigned (cntval) + 1;  -- increase counter for sro algorithm
+            workNumber1_s <= unsigned (workNumber1_s) - unsigned (oddNumber_s);  -- subtract odd number
+
+            if workNumber1_s(15) = '1' then -- number is getting negative when MSB changes to 1 for unsigned number
  
-              result_o <= unsigned (sqrtCount_s) - 1;
-              finished_s <= '1';
-              error_o <= '0';
-              overflow_o <= '0';
-              sign_o <= '0';
-              sqrtCount_s <= (others => '0');
+              result_o <= unsigned (cntval) - 1;  -- correct counter after MSB changed to 1
+              finished_s <= '1';  -- send finished signal
+              error_o <= '0';  -- no error
+              overflow_o <= '0';  -- no overflow
+              sign_o <= '0';  -- no sign
+              cntval <= (others => '0'); -- prepare for next calculation
               workNumber1_s <= (others => '0');
               oddNumber_s <= (others => '0');
+              run_s <= '0'; -- reset run signal
 
             else
 
@@ -137,23 +151,22 @@ begin
 
             end if;
             
-
-          when "0111" =>
+          when "0111" => -- logdual
   
-            logdual11_v := workNumber1_s and pattern11;
-            logdual10_v := workNumber1_s and pattern10;
-            logdual09_v := workNumber1_s and pattern09;
-            logdual08_v := workNumber1_s and pattern08;
-            logdual07_v := workNumber1_s and pattern07;
-            logdual06_v := workNumber1_s and pattern06;
-            logdual05_v := workNumber1_s and pattern05;
-            logdual04_v := workNumber1_s and pattern04;
-            logdual03_v := workNumber1_s and pattern03;
-            logdual02_v := workNumber1_s and pattern02;
-            logdual01_v := workNumber1_s and pattern01;
-            logdual00_v := workNumber1_s and pattern00;
+            logdual11_v := workNumber1_s and C_PATTERN11; -- test all 12 bit for 1, zero flag = inverted bit of the position
+            logdual10_v := workNumber1_s and C_PATTERN10;
+            logdual09_v := workNumber1_s and C_PATTERN09;
+            logdual08_v := workNumber1_s and C_PATTERN08;
+            logdual07_v := workNumber1_s and C_PATTERN07;
+            logdual06_v := workNumber1_s and C_PATTERN06;
+            logdual05_v := workNumber1_s and C_PATTERN05;
+            logdual04_v := workNumber1_s and C_PATTERN04;
+            logdual03_v := workNumber1_s and C_PATTERN03;
+            logdual02_v := workNumber1_s and C_PATTERN02;
+            logdual01_v := workNumber1_s and C_PATTERN01;
+            logdual00_v := workNumber1_s and C_PATTERN00;
 
-            if logdual11_v /= "0000000000000000" then
+            if logdual11_v /= "0000000000000000" then -- check zero flag from MSB to LSB
 
               result_o <= "0000000000001011";
               error_o <= '0';
@@ -211,30 +224,33 @@ begin
             elsif logdual00_v /= "0000000000000000" then
 
               result_o <= "0000000000000000";
-              error_o <= '1';
+              error_o <= '0';
 
-            else
- 
-              result_o <= "0000000000000000";
+            else -- logarithm of 0 is not defined = error
+
+              result_o <= (others => '0');
               error_o <= '1';
 
             end if;
 
-            finished_s <= '1';
-            overflow_o <= '0';
-            sign_o <= '0';
+            finished_s <= '1'; -- send finished pulse
+            overflow_o <= '0'; -- no overflow
+            sign_o <= '0'; -- no sing
+            run_s <= '0'; -- reset run signal
 
-          when "1010" =>
+          when "1010" => -- or
 
-            result_o(11 downto 0) <= workNumber1_s(11 downto 0) or workNumber2_s(11 downto 0);
-            finished_s <= '1';
-            error_o <= '0';
-            overflow_o <= '0';
-            sign_o <= '0';
+            result_o(11 downto 0) <= workNumber1_s(11 downto 0) or workNumber2_s(11 downto 0); -- or of 2 12bit numbers
+            result_o(15 downto 12) <= "0000"; -- complete to 16bit output
+            finished_s <= '1'; -- send finished pulse
+            error_o <= '0'; -- no error 
+            overflow_o <= '0'; -- no overflow
+            sign_o <= '0'; -- no sign
+            run_s <= '0'; -- reset run signal
 
-          when "1101" =>
+          when "1101" => -- ror
 
-            result_o(11) <= workNumber1_s(0);
+            result_o(11) <= workNumber1_s(0); -- rotate right of 12bit number
             result_o(10) <= workNumber1_s(11);
             result_o(9) <= workNumber1_s(10);
             result_o(8) <= workNumber1_s(9);
@@ -246,18 +262,20 @@ begin
             result_o(2) <= workNumber1_s(3);
             result_o(1) <= workNumber1_s(2);
             result_o(0) <= workNumber1_s(1);
-            finished_s <= '1';
-            error_o <= '0';
-            overflow_o <= '0';
-            sign_o <= '0';
+            result_o(15 downto 12) <= "0000"; -- complete to 16bit output
+            finished_s <= '1'; -- send finished pulse
+            error_o <= '0'; -- no error
+            overflow_o <= '0'; -- no overflow
+            sign_o <= '0'; -- no sign
+            run_s <= '0'; -- reset run signal
 
           when others =>
 
-            result_o <= (others => '1');
-            finished_s <= '1';
-            error_o <= '1';
-            overflow_o <= '0';
-            sign_o <= '0';
+            result_o <= (others => '0'); -- no operation type given = error
+            finished_s <= '1'; -- send finished pulse
+            error_o <= '1'; -- error
+            overflow_o <= '0'; -- no overflow
+            sign_o <= '0'; -- no sign
 
         end case;
 
@@ -265,7 +283,7 @@ begin
 
     end if;
 
-  finished_o <= finished_s;
+  finished_o <= finished_s; -- internal signal to output finished
 
   end process calculate;
  

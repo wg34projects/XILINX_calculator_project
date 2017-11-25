@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:23 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Sat Nov 25 23:06:08 2017
+# Process ID: 609
+# Current directory: /home/helmutresch/WorkDir/XILINX_calculator_project/impl/calculator.runs/synth_1
+# Command line: vivado -log calc_top.vds -mode batch -messageDb vivado.pb -notrace -source calc_top.tcl
+# Log file: /home/helmutresch/WorkDir/XILINX_calculator_project/impl/calculator.runs/synth_1/calc_top.vds
+# Journal file: /home/helmutresch/WorkDir/XILINX_calculator_project/impl/calculator.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source calc_top.tcl -notrace

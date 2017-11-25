@@ -1,36 +1,40 @@
---
+--------------------------------------------------------------------------------
 -- FHTW - BEL3 - DSD - calculator project
 --
---
 -- Author:	Helmut Resch
---			el16b005
---			BEL3
+--			el16b005 BEL3 no. 15 in attendance list
+--          User interface Type "A", square root, logdual, or, ror
 --
 -- File:	tb_io_ctrl_sim.vhd
 --
 -- Version history:
 --
--- v_0.1	13.11.2017	IO Ctrl + Testbench
--- v_0.2	15.11.2017	Calc Ctrl + Testbench
+-- v_0.1    14.11.2017	IO Ctrl + Testbench
+-- v_0.2    15.11.2017	Calc Ctrl + Testbench
+-- v_0.3	16.11.2017	ALU + Testbench
+-- v_0.4	17.11.2017	Top Level Design + Testbench
+-- v_0.5	20.11.2017	Synthesis + Implementation
+--                      Solve XILINX warnings
+-- v_0.6    21.11.2017  Synthesis and check calculations
+--                      Solve error square root
+-- v_1.0    24.11.2017  Final Specification check and Documentation
 --
 -- Design Unit:	IO Control Unit Testbench
---				Architecture
+--				Architecture SIM
 --
 -- Description:	The IO Control unit is part of the calculator project.
---				It manages the interface to the 7-segment displays,
+--				It manages the interface of the 7-segment displays,
 --				the LEDs, the push buttons and the switches of the
 --				Digilent Basys3 FPGA board.
---
---
--- below doxygen documentation blocks
+--------------------------------------------------------------------------------
 
 --! @file tb_io_ctrl_sim.vhd
---! @brief IO Control Unit Testbench Architecture
+--! @brief IO Control Unit Testbench Architecture SIM
 
 library IEEE;
 use IEEE.std_logic_1164.all;
 
---! @brief IO Control Unit Testbench Architecture
+--! @brief IO Control Unit Testbench Architecture SIM
 --! @details The IO Control unit is part of the calculator project.
 
 architecture sim of tb_io_ctrl is
@@ -94,6 +98,9 @@ begin
     pbsync_o => pbsync_o
   );
 
+--! @brief IO Control Unit Testbench Architecture SIM
+--! @details Process to generate 100MHz clock
+
   p_clk : process
 
   begin
@@ -105,9 +112,14 @@ begin
 
   end process p_clk;
 
+--! @brief IO Control Unit Testbench Architecture SIM
+--! @details Process to generate misc. stimuli
+
   run : process
 
   begin
+
+-- reset values
 
     reset_i <= '1';
     dig0_i <= "00000000";
@@ -117,81 +129,65 @@ begin
     led_i <= "0000000000000000";
     sw_i <= "0000000000000000";
     pb_i <= "0000";
-
     wait for 1 ms;
+
+-- de assert reset
 
     reset_i <= '0';
-
     wait for 1 ms;
 
--- some switches, some buttons - less than 3 100kHz ticks
+-- some switches, some buttons to test debounce
 
     sw_i <= "0000000000000001";
     pb_i <= "0000";
-
-    wait for 1 ms;
+    wait for 2 ms;
 
     sw_i <= "0000000000000010";
     pb_i <= "1001";
-
-    wait for 1 ms;
+    wait for 2 ms;
 
     sw_i <= "0000111000000010";
     pb_i <= "0101";
-
     wait for 2 ms;
 
     sw_i <= "0000000001110010";
     pb_i <= "0011";
-    
     wait for 2 ms;
 
     sw_i <= "0111100000000010";
     pb_i <= "1111";
+    wait for 2 ms;
 
-    wait for 10 ms;
-
-    sw_i <= "0000000011100010";
-    pb_i <= "1101";
-
-    wait for 10 ms;
-
-    sw_i <= "0111100000000010";
-    pb_i <= "0011";
+-- some digits to test MUX for 7-segment displays
 
     dig0_i <= "00000010";
     dig1_i <= "00100000";
     dig2_i <= "00001000";
     dig3_i <= "00010000";
-
-    wait for 5 ms;
+    wait for 2 ms;
 
     dig0_i <= "00010000";
     dig1_i <= "01000000";
     dig2_i <= "00100000";
     dig3_i <= "00000010";
-
     wait for 2 ms;
 
     dig0_i <= "00100000";
     dig1_i <= "00000100";
     dig2_i <= "00100000";
     dig3_i <= "00000010";
-
     wait for 2 ms;
 
     dig0_i <= "00010000";
     dig1_i <= "01000000";
     dig2_i <= "00010000";
     dig3_i <= "00000100";
-
     wait for 2 ms;
 
     dig0_i <= "01000000";
     dig1_i <= "00000100";
     dig2_i <= "00100000";
     dig3_i <= "00000001";
-
     wait for 2 ms;
 
   end process run;
