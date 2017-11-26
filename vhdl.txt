@@ -1,0 +1,15 @@
+vhdl
+├── alu_rtl.vhd
+├── alu_.vhd
+├── calc_ctrl_rtl.vhd
+├── calc_ctrl_.vhd
+├── calc_top_rtl.vhd
+├── calc_top_.vhd
+├── io_ctrl_rtl.vhd
+├── io_ctrl_.vhd
+├── IO-planning.xlsx
+├── schematic.pdf
+├── WARNINGS_implementation.xls
+└── WARNINGS_synthesis.xlsx
+
+0 directories, 12 files

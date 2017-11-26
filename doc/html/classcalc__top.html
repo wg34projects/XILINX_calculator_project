@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,7 +30,9 @@
   <td id="projectlogo"><img alt="Logo" src="fhtw.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VHDL calculator project BEL3
+   &#160;<span id="projectnumber">Version 1.0 - overhanding</span>
    </div>
+   <div id="projectbrief">VHDL calculator project BASYS3 board</div>
   </td>
  </tr>
  </tbody>
@@ -43,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classcalc__top.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -57,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#Ports">Ports</a> &#124;
@@ -99,13 +122,13 @@ Use Clauses</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="Ports"></a>
 Ports</h2></td></tr>
- <tr class="memitem:abe949478e3f8aad0a6aeb1842fa6c608"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#abe949478e3f8aad0a6aeb1842fa6c608">clk_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a55da7e76960757f8c6842e86a28ee7be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#a55da7e76960757f8c6842e86a28ee7be">reset_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a91628ae1b8a6c62fdd738bc70aba3f1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#a91628ae1b8a6c62fdd738bc70aba3f1e">sw_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:ae54d0166fc1acf3023764d9869477e8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#ae54d0166fc1acf3023764d9869477e8b">pb_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a818bce4de706b73d1b0168e689b5301b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#a818bce4de706b73d1b0168e689b5301b">ss_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">7</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a58671df81269968cc647f9f2335477e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#a58671df81269968cc647f9f2335477e9">ss_sel_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:ae622b8b55ca985e4965d79aab895a746"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#ae622b8b55ca985e4965d79aab895a746">led_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+ <tr class="memitem:abe949478e3f8aad0a6aeb1842fa6c608"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#abe949478e3f8aad0a6aeb1842fa6c608">clk_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a55da7e76960757f8c6842e86a28ee7be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#a55da7e76960757f8c6842e86a28ee7be">reset_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a91628ae1b8a6c62fdd738bc70aba3f1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#a91628ae1b8a6c62fdd738bc70aba3f1e">sw_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:ae54d0166fc1acf3023764d9869477e8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#ae54d0166fc1acf3023764d9869477e8b">pb_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a818bce4de706b73d1b0168e689b5301b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#a818bce4de706b73d1b0168e689b5301b">ss_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">7</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a58671df81269968cc647f9f2335477e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#a58671df81269968cc647f9f2335477e9">ss_sel_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:ae622b8b55ca985e4965d79aab895a746"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcalc__top.html#ae622b8b55ca985e4965d79aab895a746">led_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Calculator Top Design Entity. </p>
@@ -121,7 +144,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcalc__top.html#abe949478e3f8aad0a6aeb1842fa6c608">clk_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classcalc__top.html#abe949478e3f8aad0a6aeb1842fa6c608">clk_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -165,7 +188,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcalc__top.html#ae622b8b55ca985e4965d79aab895a746">led_o</a> <b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classcalc__top.html#ae622b8b55ca985e4965d79aab895a746">led_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -187,7 +210,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcalc__top.html#ae54d0166fc1acf3023764d9869477e8b">pb_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classcalc__top.html#ae54d0166fc1acf3023764d9869477e8b">pb_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -209,7 +232,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcalc__top.html#a55da7e76960757f8c6842e86a28ee7be">reset_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classcalc__top.html#a55da7e76960757f8c6842e86a28ee7be">reset_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -231,7 +254,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcalc__top.html#a818bce4de706b73d1b0168e689b5301b">ss_o</a> <b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">7</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classcalc__top.html#a818bce4de706b73d1b0168e689b5301b">ss_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">7</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -253,7 +276,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcalc__top.html#a58671df81269968cc647f9f2335477e9">ss_sel_o</a> <b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classcalc__top.html#a58671df81269968cc647f9f2335477e9">ss_sel_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -297,7 +320,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcalc__top.html#a91628ae1b8a6c62fdd738bc70aba3f1e">sw_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classcalc__top.html#a91628ae1b8a6c62fdd738bc70aba3f1e">sw_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -313,11 +336,15 @@ Ports</h2></td></tr>
 <li>vhdl/<a class="el" href="calc__top___8vhd.html">calc_top_.vhd</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classcalc__top.html">calc_top</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

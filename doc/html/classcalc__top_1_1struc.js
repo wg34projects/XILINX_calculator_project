@@ -1,0 +1,28 @@
+var classcalc__top_1_1struc =
+[
+    [ "alu", "classcalc__top_1_1struc.html#a205ce47b385f0dede25ae06417988605", null ],
+    [ "calc_ctrl", "classcalc__top_1_1struc.html#a107e48c926f0bc80ef4d44886a9244be", null ],
+    [ "dig0", "classcalc__top_1_1struc.html#a94e2fbea2fc8aa872f789cac3b05a792", null ],
+    [ "dig1", "classcalc__top_1_1struc.html#a0ff118c590b909146c605db620aeddab", null ],
+    [ "dig2", "classcalc__top_1_1struc.html#a10b13c15cf027e3fe2787262b4dfbd68", null ],
+    [ "dig3", "classcalc__top_1_1struc.html#a75e510ebec7bc776f363b0b85b75f95b", null ],
+    [ "errors", "classcalc__top_1_1struc.html#aec1d4796034ae3c3c9134b3e95a0d5df", null ],
+    [ "finished", "classcalc__top_1_1struc.html#a47aba6895602dddf531ff22e8b0c711d", null ],
+    [ "i_alu", "classcalc__top_1_1struc.html#a9782fd33327dd4a14d723cbf74b8cea0", null ],
+    [ "i_calc_ctrl", "classcalc__top_1_1struc.html#af496ee9657b7be2d83caead5654a279c", null ],
+    [ "i_io_ctrl", "classcalc__top_1_1struc.html#a27c0b00ffb215dedd3c56546e08ebc31", null ],
+    [ "IEEE", "classcalc__top_1_1struc.html#ae4f03c286607f3181e16b9aa12d0c6d4", null ],
+    [ "io_ctrl", "classcalc__top_1_1struc.html#a97c813578819a319bf5e8c6d53894fea", null ],
+    [ "led", "classcalc__top_1_1struc.html#a5e8caf1925f65515f19bc5874a22f1b0", null ],
+    [ "op1", "classcalc__top_1_1struc.html#a6be4715a7a832af9de94e3e699874402", null ],
+    [ "op2", "classcalc__top_1_1struc.html#afa4ad824eaff926700879a3fdd833ba6", null ],
+    [ "optype", "classcalc__top_1_1struc.html#a2f65b6e4bcacc95242acc42352c527d6", null ],
+    [ "overflow", "classcalc__top_1_1struc.html#a39aff748d8463f5fb52ba382aafb46f2", null ],
+    [ "pbsync", "classcalc__top_1_1struc.html#a5c1bd4d44af9b0f340317c2228eda942", null ],
+    [ "result", "classcalc__top_1_1struc.html#a3d354698c54585e94dc900e01a946b08", null ],
+    [ "sign", "classcalc__top_1_1struc.html#a4b25842fe36c38f4562994d19c0cbe9c", null ],
+    [ "start", "classcalc__top_1_1struc.html#a3ab2830fffba8e617a73f33778a4d1de", null ],
+    [ "std_logic_1164", "classcalc__top_1_1struc.html#acd03516902501cd1c7296a98e22c6fcb", null ],
+    [ "std_logic_arith", "classcalc__top_1_1struc.html#a0f5ecc6613f63d07f7963a97b1b26095", null ],
+    [ "swsync", "classcalc__top_1_1struc.html#a9beb24b7dc36ee4c13f031555d2ceb3c", null ]
+];

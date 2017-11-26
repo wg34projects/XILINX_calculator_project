@@ -1,0 +1,144 @@
+\hypertarget{classalu}{}\section{alu Entity Reference}
+\label{classalu}\index{alu@{alu}}
+
+
+A\+LU Entity.  
+
+
+Inheritance diagram for alu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classalu}
+\end{center}
+\end{figure}
+\subsection*{Entities}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classalu_1_1rtl}{rtl} architecture
+\begin{DoxyCompactList}\small\item\em A\+LU Architecture R\+TL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Libraries}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classalu_ae4f03c286607f3181e16b9aa12d0c6d4}{I\+E\+EE} 
+\end{DoxyCompactItemize}
+\subsection*{Use Clauses}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classalu_acd03516902501cd1c7296a98e22c6fcb}{std\+\_\+logic\+\_\+1164}   
+\end{DoxyCompactItemize}
+\subsection*{Ports}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classalu_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}  {\bfseries {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}  {\bfseries {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_a1127482098676cfc6ce7e98ba675ee27}{op1\+\_\+i}  {\bfseries {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{11} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_ae346648ed4ed2217b5e8d668b165aff2}{op2\+\_\+i}  {\bfseries {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{11} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_aee662ea38c86cd2e7dc1970ce8a6d5e9}{optype\+\_\+i}  {\bfseries {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_aba7911228d421cdfd5fc4eb74a60572c}{start\+\_\+i}  {\bfseries {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_a3e4609af33f8de496eb53352525eb9e7}{finished\+\_\+o}  {\bfseries {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_a4c4aa4e657b005516ee13f5b57054b9a}{result\+\_\+o}  {\bfseries {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{15} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_ad931fb1d7982869689b7072b46bf5f0b}{sign\+\_\+o}  {\bfseries {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_a7771d7a30216542931475a12593b972c}{overflow\+\_\+o}  {\bfseries {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classalu_a43d3fe459020288f9fd3fe64782b7402}{error\+\_\+o}  {\bfseries {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }}} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+LU Entity. 
+
+The A\+LU is part of the calculator project. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classalu_abe949478e3f8aad0a6aeb1842fa6c608}\label{classalu_abe949478e3f8aad0a6aeb1842fa6c608}} 
+\index{alu@{alu}!clk\+\_\+i@{clk\+\_\+i}}
+\index{clk\+\_\+i@{clk\+\_\+i}!alu@{alu}}
+\subsubsection{\texorpdfstring{clk\+\_\+i}{clk\_i}}
+{\footnotesize\ttfamily \hyperlink{classalu_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i} {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_a43d3fe459020288f9fd3fe64782b7402}\label{classalu_a43d3fe459020288f9fd3fe64782b7402}} 
+\index{alu@{alu}!error\+\_\+o@{error\+\_\+o}}
+\index{error\+\_\+o@{error\+\_\+o}!alu@{alu}}
+\subsubsection{\texorpdfstring{error\+\_\+o}{error\_o}}
+{\footnotesize\ttfamily \hyperlink{classalu_a43d3fe459020288f9fd3fe64782b7402}{error\+\_\+o} {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_a3e4609af33f8de496eb53352525eb9e7}\label{classalu_a3e4609af33f8de496eb53352525eb9e7}} 
+\index{alu@{alu}!finished\+\_\+o@{finished\+\_\+o}}
+\index{finished\+\_\+o@{finished\+\_\+o}!alu@{alu}}
+\subsubsection{\texorpdfstring{finished\+\_\+o}{finished\_o}}
+{\footnotesize\ttfamily \hyperlink{classalu_a3e4609af33f8de496eb53352525eb9e7}{finished\+\_\+o} {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_ae4f03c286607f3181e16b9aa12d0c6d4}\label{classalu_ae4f03c286607f3181e16b9aa12d0c6d4}} 
+\index{alu@{alu}!I\+E\+EE@{I\+E\+EE}}
+\index{I\+E\+EE@{I\+E\+EE}!alu@{alu}}
+\subsubsection{\texorpdfstring{I\+E\+EE}{IEEE}}
+{\footnotesize\ttfamily \hyperlink{classalu_ae4f03c286607f3181e16b9aa12d0c6d4}{I\+E\+EE}\hspace{0.3cm}{\ttfamily [Library]}}
+
+\mbox{\Hypertarget{classalu_a1127482098676cfc6ce7e98ba675ee27}\label{classalu_a1127482098676cfc6ce7e98ba675ee27}} 
+\index{alu@{alu}!op1\+\_\+i@{op1\+\_\+i}}
+\index{op1\+\_\+i@{op1\+\_\+i}!alu@{alu}}
+\subsubsection{\texorpdfstring{op1\+\_\+i}{op1\_i}}
+{\footnotesize\ttfamily \hyperlink{classalu_a1127482098676cfc6ce7e98ba675ee27}{op1\+\_\+i} {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{11} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_ae346648ed4ed2217b5e8d668b165aff2}\label{classalu_ae346648ed4ed2217b5e8d668b165aff2}} 
+\index{alu@{alu}!op2\+\_\+i@{op2\+\_\+i}}
+\index{op2\+\_\+i@{op2\+\_\+i}!alu@{alu}}
+\subsubsection{\texorpdfstring{op2\+\_\+i}{op2\_i}}
+{\footnotesize\ttfamily \hyperlink{classalu_ae346648ed4ed2217b5e8d668b165aff2}{op2\+\_\+i} {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{11} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_aee662ea38c86cd2e7dc1970ce8a6d5e9}\label{classalu_aee662ea38c86cd2e7dc1970ce8a6d5e9}} 
+\index{alu@{alu}!optype\+\_\+i@{optype\+\_\+i}}
+\index{optype\+\_\+i@{optype\+\_\+i}!alu@{alu}}
+\subsubsection{\texorpdfstring{optype\+\_\+i}{optype\_i}}
+{\footnotesize\ttfamily \hyperlink{classalu_aee662ea38c86cd2e7dc1970ce8a6d5e9}{optype\+\_\+i} {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_a7771d7a30216542931475a12593b972c}\label{classalu_a7771d7a30216542931475a12593b972c}} 
+\index{alu@{alu}!overflow\+\_\+o@{overflow\+\_\+o}}
+\index{overflow\+\_\+o@{overflow\+\_\+o}!alu@{alu}}
+\subsubsection{\texorpdfstring{overflow\+\_\+o}{overflow\_o}}
+{\footnotesize\ttfamily \hyperlink{classalu_a7771d7a30216542931475a12593b972c}{overflow\+\_\+o} {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_a55da7e76960757f8c6842e86a28ee7be}\label{classalu_a55da7e76960757f8c6842e86a28ee7be}} 
+\index{alu@{alu}!reset\+\_\+i@{reset\+\_\+i}}
+\index{reset\+\_\+i@{reset\+\_\+i}!alu@{alu}}
+\subsubsection{\texorpdfstring{reset\+\_\+i}{reset\_i}}
+{\footnotesize\ttfamily \hyperlink{classalu_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i} {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_a4c4aa4e657b005516ee13f5b57054b9a}\label{classalu_a4c4aa4e657b005516ee13f5b57054b9a}} 
+\index{alu@{alu}!result\+\_\+o@{result\+\_\+o}}
+\index{result\+\_\+o@{result\+\_\+o}!alu@{alu}}
+\subsubsection{\texorpdfstring{result\+\_\+o}{result\_o}}
+{\footnotesize\ttfamily \hyperlink{classalu_a4c4aa4e657b005516ee13f5b57054b9a}{result\+\_\+o} {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{15} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_ad931fb1d7982869689b7072b46bf5f0b}\label{classalu_ad931fb1d7982869689b7072b46bf5f0b}} 
+\index{alu@{alu}!sign\+\_\+o@{sign\+\_\+o}}
+\index{sign\+\_\+o@{sign\+\_\+o}!alu@{alu}}
+\subsubsection{\texorpdfstring{sign\+\_\+o}{sign\_o}}
+{\footnotesize\ttfamily \hyperlink{classalu_ad931fb1d7982869689b7072b46bf5f0b}{sign\+\_\+o} {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_aba7911228d421cdfd5fc4eb74a60572c}\label{classalu_aba7911228d421cdfd5fc4eb74a60572c}} 
+\index{alu@{alu}!start\+\_\+i@{start\+\_\+i}}
+\index{start\+\_\+i@{start\+\_\+i}!alu@{alu}}
+\subsubsection{\texorpdfstring{start\+\_\+i}{start\_i}}
+{\footnotesize\ttfamily \hyperlink{classalu_aba7911228d421cdfd5fc4eb74a60572c}{start\+\_\+i} {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Port]}}
+
+\mbox{\Hypertarget{classalu_acd03516902501cd1c7296a98e22c6fcb}\label{classalu_acd03516902501cd1c7296a98e22c6fcb}} 
+\index{alu@{alu}!std\+\_\+logic\+\_\+1164@{std\+\_\+logic\+\_\+1164}}
+\index{std\+\_\+logic\+\_\+1164@{std\+\_\+logic\+\_\+1164}!alu@{alu}}
+\subsubsection{\texorpdfstring{std\+\_\+logic\+\_\+1164}{std\_logic\_1164}}
+{\footnotesize\ttfamily \hyperlink{classalu_acd03516902501cd1c7296a98e22c6fcb}{std\+\_\+logic\+\_\+1164}\hspace{0.3cm}{\ttfamily [Package]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vhdl/\hyperlink{alu___8vhd}{alu\+\_\+.\+vhd}\end{DoxyCompactItemize}

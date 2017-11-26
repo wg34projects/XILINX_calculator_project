@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,7 +30,9 @@
   <td id="projectlogo"><img alt="Logo" src="fhtw.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VHDL calculator project BEL3
+   &#160;<span id="projectnumber">Version 1.0 - overhanding</span>
    </div>
+   <div id="projectbrief">VHDL calculator project BASYS3 board</div>
   </td>
  </tr>
  </tbody>
@@ -43,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classalu.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -57,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#Ports">Ports</a> &#124;
@@ -98,17 +121,17 @@ Use Clauses</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="Ports"></a>
 Ports</h2></td></tr>
- <tr class="memitem:abe949478e3f8aad0a6aeb1842fa6c608"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#abe949478e3f8aad0a6aeb1842fa6c608">clk_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a55da7e76960757f8c6842e86a28ee7be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a55da7e76960757f8c6842e86a28ee7be">reset_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a1127482098676cfc6ce7e98ba675ee27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a1127482098676cfc6ce7e98ba675ee27">op1_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:ae346648ed4ed2217b5e8d668b165aff2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#ae346648ed4ed2217b5e8d668b165aff2">op2_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:aee662ea38c86cd2e7dc1970ce8a6d5e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#aee662ea38c86cd2e7dc1970ce8a6d5e9">optype_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:aba7911228d421cdfd5fc4eb74a60572c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#aba7911228d421cdfd5fc4eb74a60572c">start_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a3e4609af33f8de496eb53352525eb9e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a3e4609af33f8de496eb53352525eb9e7">finished_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a4c4aa4e657b005516ee13f5b57054b9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a4c4aa4e657b005516ee13f5b57054b9a">result_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:ad931fb1d7982869689b7072b46bf5f0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#ad931fb1d7982869689b7072b46bf5f0b">sign_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a7771d7a30216542931475a12593b972c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a7771d7a30216542931475a12593b972c">overflow_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a43d3fe459020288f9fd3fe64782b7402"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a43d3fe459020288f9fd3fe64782b7402">error_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+ <tr class="memitem:abe949478e3f8aad0a6aeb1842fa6c608"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#abe949478e3f8aad0a6aeb1842fa6c608">clk_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a55da7e76960757f8c6842e86a28ee7be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a55da7e76960757f8c6842e86a28ee7be">reset_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a1127482098676cfc6ce7e98ba675ee27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a1127482098676cfc6ce7e98ba675ee27">op1_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:ae346648ed4ed2217b5e8d668b165aff2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#ae346648ed4ed2217b5e8d668b165aff2">op2_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:aee662ea38c86cd2e7dc1970ce8a6d5e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#aee662ea38c86cd2e7dc1970ce8a6d5e9">optype_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:aba7911228d421cdfd5fc4eb74a60572c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#aba7911228d421cdfd5fc4eb74a60572c">start_i</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a3e4609af33f8de496eb53352525eb9e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a3e4609af33f8de496eb53352525eb9e7">finished_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a4c4aa4e657b005516ee13f5b57054b9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a4c4aa4e657b005516ee13f5b57054b9a">result_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:ad931fb1d7982869689b7072b46bf5f0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#ad931fb1d7982869689b7072b46bf5f0b">sign_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a7771d7a30216542931475a12593b972c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a7771d7a30216542931475a12593b972c">overflow_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a43d3fe459020288f9fd3fe64782b7402"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classalu.html#a43d3fe459020288f9fd3fe64782b7402">error_o</a> &#160;</td><td class="memItemRight" valign="bottom"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ALU Entity. </p>
@@ -124,7 +147,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#abe949478e3f8aad0a6aeb1842fa6c608">clk_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#abe949478e3f8aad0a6aeb1842fa6c608">clk_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -146,7 +169,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#a43d3fe459020288f9fd3fe64782b7402">error_o</a> <b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#a43d3fe459020288f9fd3fe64782b7402">error_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -168,7 +191,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#a3e4609af33f8de496eb53352525eb9e7">finished_o</a> <b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#a3e4609af33f8de496eb53352525eb9e7">finished_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -212,7 +235,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#a1127482098676cfc6ce7e98ba675ee27">op1_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#a1127482098676cfc6ce7e98ba675ee27">op1_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -234,7 +257,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#ae346648ed4ed2217b5e8d668b165aff2">op2_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#ae346648ed4ed2217b5e8d668b165aff2">op2_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -256,7 +279,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#aee662ea38c86cd2e7dc1970ce8a6d5e9">optype_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#aee662ea38c86cd2e7dc1970ce8a6d5e9">optype_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -278,7 +301,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#a7771d7a30216542931475a12593b972c">overflow_o</a> <b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#a7771d7a30216542931475a12593b972c">overflow_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -300,7 +323,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#a55da7e76960757f8c6842e86a28ee7be">reset_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#a55da7e76960757f8c6842e86a28ee7be">reset_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -322,7 +345,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#a4c4aa4e657b005516ee13f5b57054b9a">result_o</a> <b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#a4c4aa4e657b005516ee13f5b57054b9a">result_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -344,7 +367,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#ad931fb1d7982869689b7072b46bf5f0b">sign_o</a> <b><span class="vhdlchar">out</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#ad931fb1d7982869689b7072b46bf5f0b">sign_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -366,7 +389,7 @@ Ports</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classalu.html#aba7911228d421cdfd5fc4eb74a60572c">start_i</a> <b><span class="vhdlchar">in</span><span class="vhdlchar"> </span></b> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classalu.html#aba7911228d421cdfd5fc4eb74a60572c">start_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -404,11 +427,15 @@ Ports</h2></td></tr>
 <li>vhdl/<a class="el" href="alu___8vhd.html">alu_.vhd</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classalu.html">alu</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

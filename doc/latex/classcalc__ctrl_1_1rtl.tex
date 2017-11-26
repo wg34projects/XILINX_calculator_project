@@ -1,0 +1,232 @@
+\hypertarget{classcalc__ctrl_1_1rtl}{}\section{rtl Architecture Reference}
+\label{classcalc__ctrl_1_1rtl}\index{rtl@{rtl}}
+
+
+Calclator Control Unit Architecture R\+TL.  
+
+
+\subsection*{Functions}
+ \begin{DoxyCompactItemize}
+\item 
+{\bfseries {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }}} \hyperlink{classcalc__ctrl_1_1rtl_a3774820e8176f18c52166ea46fd6f731}{make\+B\+I\+Nto\+H\+EX}{\bfseries  ( }{\bfseries \textcolor{vhdlchar}{binnumber\+Convert\+: }\textcolor{stringliteral}{in }\textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector( 3 downto  0)}}{\bfseries  )} 
+\begin{DoxyCompactList}\small\item\em Calclator Control Unit Architecture R\+TL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Processes}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a40280aacdbe6c7a8f13c725ec3b5642d}{p\+\_\+calc\+F\+SM}{\bfseries  ( {\bfseries {\bfseries \hyperlink{classcalc__ctrl_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_ac9ed06cffb254d885992bb8fb780e8e6}{pbsync\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_a8f274a58bd077b3f0604e897f5fd8d06}{swsync\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_1_1rtl_a3e1f575cd6ec8066c23692c007e16457}{readystate\+\_\+s}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_a58aeef44e9161ee5cb7cc149ac8ee71a}{result\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_a36cce5b89625a8867788d2fddddd19fd}{sign\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_a3844e90f5dc89f02aa3b92d8ca978cfd}{overflow\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_a43d5e6363af801d5112bf95b65cf682a}{error\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classcalc__ctrl_1_1rtl_af28493abe45f5efc5d9964a4858da804}{buttonstate\+\_\+s}} \textcolor{vhdlchar}{ }} )}
+\begin{DoxyCompactList}\small\item\em Calclator Control Unit Architecture R\+TL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Procedures}
+ \begin{DoxyCompactItemize}
+\item 
+{\bfseries {\bfseries \textcolor{vhdlchar}{ }}} \hyperlink{classcalc__ctrl_1_1rtl_a3cfaac6a4338f4e7cb72b3cc357f8f13}{decode\+Operator}( \newline
+{\bfseries \textcolor{keywordflow}{signal }\textcolor{vhdlchar}{dig2\+\_\+o\+: }\textcolor{stringliteral}{} {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }}}\newline
+  {\bfseries \textcolor{keywordflow}{signal }\textcolor{vhdlchar}{dig1\+\_\+o\+: }\textcolor{stringliteral}{} {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }}}\newline
+  {\bfseries \textcolor{keywordflow}{signal }\textcolor{vhdlchar}{dig0\+\_\+o\+: }\textcolor{stringliteral}{} {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }}}\newline
+  {\bfseries \textcolor{keywordflow}{signal }\textcolor{vhdlchar}{swsync\+\_\+i\+: }\textcolor{stringliteral}{} {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }}}\newline
+   )
+\begin{DoxyCompactList}\small\item\em Calclator Control Unit Architecture R\+TL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Libraries}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}{I\+E\+EE} 
+\end{DoxyCompactItemize}
+\subsection*{Use Clauses}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}{std\+\_\+logic\+\_\+1164}   
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}{std\+\_\+logic\+\_\+arith}   
+\end{DoxyCompactItemize}
+\subsection*{Constants}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a8c98728247a28d37c004c053a73d4439}{C\+\_\+\+O\+P1start} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 10011110 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_ae8e7b8599594b983bf842caa981a2bba}{C\+\_\+\+O\+P2start} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 00100100 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a3cc387f99d1b63a3af35ac60559c9b6a}{C\+\_\+\+T\+Y\+Pstart} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000100 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_ac9b47443207ede396cb87592b71268de}{C\+\_\+\+S\+I\+GN} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11111101 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a1ef16d8742b8f025e8cff8c8ed8287c7}{C\+\_\+\+Echar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 01100001 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a435c44e04d4c0b9e6f22f07134556605}{C\+\_\+rchar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11110101 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a25ed9f4e520f01fab704fb01dffe6323}{C\+\_\+\+N\+U\+L\+Lchar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11111111 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_af0b937c99c3b3945e49c26b6900419cc}{C\+\_\+\+Schar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 01001001 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a842fcd4415041f983df0a4f7e85fbc68}{C\+\_\+\+Lchar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11100011 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a4b3251b1794f41f0e1e599ea307596fc}{C\+\_\+ochar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000101 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a4eee52e4f1c421f84974bd2e35d180c5}{C\+\_\+bchar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000001 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\end{DoxyCompactItemize}
+\subsection*{Types}
+ \begin{DoxyCompactItemize}
+\item 
+{\bfseries \hyperlink{classcalc__ctrl_1_1rtl_a8bc0dac7a50e3f941ae2eb6dc9a2a814}{states}{\bfseries \textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{enter\+O\+P1}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{,}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{enter\+O\+P2}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{,}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{enter\+T\+YP}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{,}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{calculate}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{,}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{display\+Result}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }}} 
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a17a79c8d34e649e8b8cee04947ed297d}{state\+\_\+s} {\bfseries {\bfseries \hyperlink{classcalc__ctrl_1_1rtl_a8bc0dac7a50e3f941ae2eb6dc9a2a814}{states}} \textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_af28493abe45f5efc5d9964a4858da804}{buttonstate\+\_\+s} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{1} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classcalc__ctrl_1_1rtl_a3e1f575cd6ec8066c23692c007e16457}{readystate\+\_\+s} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calclator Control Unit Architecture R\+TL. 
+
+The Calulator Control unit is part of the calculator project. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a3cfaac6a4338f4e7cb72b3cc357f8f13}\label{classcalc__ctrl_1_1rtl_a3cfaac6a4338f4e7cb72b3cc357f8f13}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!decode\+Operator@{decode\+Operator}}
+\index{decode\+Operator@{decode\+Operator}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{decode\+Operator()}{decodeOperator()}}
+{\footnotesize\ttfamily  {\bfseries \textcolor{vhdlchar}{ }} decode\+Operator(\begin{DoxyParamCaption}\item[{\textcolor{keywordtype}{signal } }]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a06ebb2808d498cfcb800e89ebfd6f06d}{dig2\+\_\+o}} \textcolor{vhdlchar}{ }}\textcolor{stringliteral}{} {\em {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }}} ,  }\item[{\textcolor{keywordtype}{signal } }]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a30f5823bfbad17a9d14d0d3ac377d36f}{dig1\+\_\+o}} \textcolor{vhdlchar}{ }}\textcolor{stringliteral}{} {\em {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }}} ,  }\item[{\textcolor{keywordtype}{signal } }]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_ae2904ffa81e882d04f8595d84c2f8c9a}{dig0\+\_\+o}} \textcolor{vhdlchar}{ }}\textcolor{stringliteral}{} {\em {\bfseries \textcolor{keywordflow}{out}\textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }}} ,  }\item[{\textcolor{keywordtype}{signal } }]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a8f274a58bd077b3f0604e897f5fd8d06}{swsync\+\_\+i}} \textcolor{vhdlchar}{ }}\textcolor{stringliteral}{} {\em {\bfseries \textcolor{keywordflow}{in}\textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Procedure]}}
+
+
+
+Calclator Control Unit Architecture R\+TL. 
+
+Procedure to decode switch setting for operator \mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a3774820e8176f18c52166ea46fd6f731}\label{classcalc__ctrl_1_1rtl_a3774820e8176f18c52166ea46fd6f731}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!make\+B\+I\+Nto\+H\+EX@{make\+B\+I\+Nto\+H\+EX}}
+\index{make\+B\+I\+Nto\+H\+EX@{make\+B\+I\+Nto\+H\+EX}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{make\+B\+I\+Nto\+H\+E\+X()}{makeBINtoHEX()}}
+{\footnotesize\ttfamily  {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }} make\+B\+I\+Nto\+H\+EX(\begin{DoxyParamCaption}\item[{}]{{\bfseries \textcolor{vhdlchar}{binnumber\+Convert}\textcolor{vhdlchar}{ }}\textcolor{stringliteral}{in} {\em {\bfseries \textcolor{vhdlchar}{ }\textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Function]}}
+
+
+
+Calclator Control Unit Architecture R\+TL. 
+
+Function to convert binary representation of switches to hexadecimal output \mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a40280aacdbe6c7a8f13c725ec3b5642d}\label{classcalc__ctrl_1_1rtl_a40280aacdbe6c7a8f13c725ec3b5642d}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!p\+\_\+calc\+F\+SM@{p\+\_\+calc\+F\+SM}}
+\index{p\+\_\+calc\+F\+SM@{p\+\_\+calc\+F\+SM}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{p\+\_\+calc\+F\+S\+M()}{p\_calcFSM()}}
+{\footnotesize\ttfamily  {\bfseries \textcolor{vhdlchar}{ }} p\+\_\+calc\+F\+SM(\begin{DoxyParamCaption}\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_ac9ed06cffb254d885992bb8fb780e8e6}{pbsync\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a8f274a58bd077b3f0604e897f5fd8d06}{swsync\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_1_1rtl_a3e1f575cd6ec8066c23692c007e16457}{readystate\+\_\+s}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a58aeef44e9161ee5cb7cc149ac8ee71a}{result\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a36cce5b89625a8867788d2fddddd19fd}{sign\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a3844e90f5dc89f02aa3b92d8ca978cfd}{overflow\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_a43d5e6363af801d5112bf95b65cf682a}{error\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classcalc__ctrl_1_1rtl_af28493abe45f5efc5d9964a4858da804}{buttonstate\+\_\+s}} \textcolor{vhdlchar}{ }} {\em } }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Process]}}
+
+
+
+Calclator Control Unit Architecture R\+TL. 
+
+Process for F\+SM calculator -\/ enter\+O\+P1, enter\+O\+P2, enter\+Typ, calculate, display\+Result 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_af28493abe45f5efc5d9964a4858da804}\label{classcalc__ctrl_1_1rtl_af28493abe45f5efc5d9964a4858da804}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!buttonstate\+\_\+s@{buttonstate\+\_\+s}}
+\index{buttonstate\+\_\+s@{buttonstate\+\_\+s}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{buttonstate\+\_\+s}{buttonstate\_s}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_af28493abe45f5efc5d9964a4858da804}{buttonstate\+\_\+s} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{1} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a4eee52e4f1c421f84974bd2e35d180c5}\label{classcalc__ctrl_1_1rtl_a4eee52e4f1c421f84974bd2e35d180c5}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+bchar@{C\+\_\+bchar}}
+\index{C\+\_\+bchar@{C\+\_\+bchar}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+bchar}{C\_bchar}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a4eee52e4f1c421f84974bd2e35d180c5}{C\+\_\+bchar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000001 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a1ef16d8742b8f025e8cff8c8ed8287c7}\label{classcalc__ctrl_1_1rtl_a1ef16d8742b8f025e8cff8c8ed8287c7}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+\+Echar@{C\+\_\+\+Echar}}
+\index{C\+\_\+\+Echar@{C\+\_\+\+Echar}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+Echar}{C\_Echar}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a1ef16d8742b8f025e8cff8c8ed8287c7}{C\+\_\+\+Echar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 01100001 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a842fcd4415041f983df0a4f7e85fbc68}\label{classcalc__ctrl_1_1rtl_a842fcd4415041f983df0a4f7e85fbc68}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+\+Lchar@{C\+\_\+\+Lchar}}
+\index{C\+\_\+\+Lchar@{C\+\_\+\+Lchar}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+Lchar}{C\_Lchar}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a842fcd4415041f983df0a4f7e85fbc68}{C\+\_\+\+Lchar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11100011 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a25ed9f4e520f01fab704fb01dffe6323}\label{classcalc__ctrl_1_1rtl_a25ed9f4e520f01fab704fb01dffe6323}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+\+N\+U\+L\+Lchar@{C\+\_\+\+N\+U\+L\+Lchar}}
+\index{C\+\_\+\+N\+U\+L\+Lchar@{C\+\_\+\+N\+U\+L\+Lchar}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+N\+U\+L\+Lchar}{C\_NULLchar}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a25ed9f4e520f01fab704fb01dffe6323}{C\+\_\+\+N\+U\+L\+Lchar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11111111 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a4b3251b1794f41f0e1e599ea307596fc}\label{classcalc__ctrl_1_1rtl_a4b3251b1794f41f0e1e599ea307596fc}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+ochar@{C\+\_\+ochar}}
+\index{C\+\_\+ochar@{C\+\_\+ochar}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+ochar}{C\_ochar}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a4b3251b1794f41f0e1e599ea307596fc}{C\+\_\+ochar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000101 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a8c98728247a28d37c004c053a73d4439}\label{classcalc__ctrl_1_1rtl_a8c98728247a28d37c004c053a73d4439}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+\+O\+P1start@{C\+\_\+\+O\+P1start}}
+\index{C\+\_\+\+O\+P1start@{C\+\_\+\+O\+P1start}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+O\+P1start}{C\_OP1start}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a8c98728247a28d37c004c053a73d4439}{C\+\_\+\+O\+P1start} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 10011110 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_ae8e7b8599594b983bf842caa981a2bba}\label{classcalc__ctrl_1_1rtl_ae8e7b8599594b983bf842caa981a2bba}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+\+O\+P2start@{C\+\_\+\+O\+P2start}}
+\index{C\+\_\+\+O\+P2start@{C\+\_\+\+O\+P2start}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+O\+P2start}{C\_OP2start}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_ae8e7b8599594b983bf842caa981a2bba}{C\+\_\+\+O\+P2start} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 00100100 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a435c44e04d4c0b9e6f22f07134556605}\label{classcalc__ctrl_1_1rtl_a435c44e04d4c0b9e6f22f07134556605}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+rchar@{C\+\_\+rchar}}
+\index{C\+\_\+rchar@{C\+\_\+rchar}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+rchar}{C\_rchar}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a435c44e04d4c0b9e6f22f07134556605}{C\+\_\+rchar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11110101 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_af0b937c99c3b3945e49c26b6900419cc}\label{classcalc__ctrl_1_1rtl_af0b937c99c3b3945e49c26b6900419cc}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+\+Schar@{C\+\_\+\+Schar}}
+\index{C\+\_\+\+Schar@{C\+\_\+\+Schar}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+Schar}{C\_Schar}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_af0b937c99c3b3945e49c26b6900419cc}{C\+\_\+\+Schar} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 01001001 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_ac9b47443207ede396cb87592b71268de}\label{classcalc__ctrl_1_1rtl_ac9b47443207ede396cb87592b71268de}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+\+S\+I\+GN@{C\+\_\+\+S\+I\+GN}}
+\index{C\+\_\+\+S\+I\+GN@{C\+\_\+\+S\+I\+GN}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+S\+I\+GN}{C\_SIGN}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_ac9b47443207ede396cb87592b71268de}{C\+\_\+\+S\+I\+GN} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11111101 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a3cc387f99d1b63a3af35ac60559c9b6a}\label{classcalc__ctrl_1_1rtl_a3cc387f99d1b63a3af35ac60559c9b6a}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!C\+\_\+\+T\+Y\+Pstart@{C\+\_\+\+T\+Y\+Pstart}}
+\index{C\+\_\+\+T\+Y\+Pstart@{C\+\_\+\+T\+Y\+Pstart}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+T\+Y\+Pstart}{C\_TYPstart}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a3cc387f99d1b63a3af35ac60559c9b6a}{C\+\_\+\+T\+Y\+Pstart} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000100 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}\label{classcalc__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!I\+E\+EE@{I\+E\+EE}}
+\index{I\+E\+EE@{I\+E\+EE}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{I\+E\+EE}{IEEE}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}{I\+E\+EE}\hspace{0.3cm}{\ttfamily [Library]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a3e1f575cd6ec8066c23692c007e16457}\label{classcalc__ctrl_1_1rtl_a3e1f575cd6ec8066c23692c007e16457}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!readystate\+\_\+s@{readystate\+\_\+s}}
+\index{readystate\+\_\+s@{readystate\+\_\+s}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{readystate\+\_\+s}{readystate\_s}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a3e1f575cd6ec8066c23692c007e16457}{readystate\+\_\+s} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a17a79c8d34e649e8b8cee04947ed297d}\label{classcalc__ctrl_1_1rtl_a17a79c8d34e649e8b8cee04947ed297d}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!state\+\_\+s@{state\+\_\+s}}
+\index{state\+\_\+s@{state\+\_\+s}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{state\+\_\+s}{state\_s}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a17a79c8d34e649e8b8cee04947ed297d}{state\+\_\+s} {\bfseries {\bfseries \hyperlink{classcalc__ctrl_1_1rtl_a8bc0dac7a50e3f941ae2eb6dc9a2a814}{states}} \textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a8bc0dac7a50e3f941ae2eb6dc9a2a814}\label{classcalc__ctrl_1_1rtl_a8bc0dac7a50e3f941ae2eb6dc9a2a814}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!states@{states}}
+\index{states@{states}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{states}{states}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a8bc0dac7a50e3f941ae2eb6dc9a2a814}{states} {\bfseries \textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{enter\+O\+P1}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{,}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{enter\+O\+P2}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{,}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{enter\+T\+YP}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{,}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{calculate}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{,}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{display\+Result}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Type]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}\label{classcalc__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!std\+\_\+logic\+\_\+1164@{std\+\_\+logic\+\_\+1164}}
+\index{std\+\_\+logic\+\_\+1164@{std\+\_\+logic\+\_\+1164}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{std\+\_\+logic\+\_\+1164}{std\_logic\_1164}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}{std\+\_\+logic\+\_\+1164}\hspace{0.3cm}{\ttfamily [Package]}}
+
+\mbox{\Hypertarget{classcalc__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}\label{classcalc__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}} 
+\index{calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}!std\+\_\+logic\+\_\+arith@{std\+\_\+logic\+\_\+arith}}
+\index{std\+\_\+logic\+\_\+arith@{std\+\_\+logic\+\_\+arith}!calc\+\_\+ctrl\+::rtl@{calc\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{std\+\_\+logic\+\_\+arith}{std\_logic\_arith}}
+{\footnotesize\ttfamily \hyperlink{classcalc__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}{std\+\_\+logic\+\_\+arith}\hspace{0.3cm}{\ttfamily [Package]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vhdl/\hyperlink{calc__ctrl__rtl_8vhd}{calc\+\_\+ctrl\+\_\+rtl.\+vhd}\end{DoxyCompactItemize}

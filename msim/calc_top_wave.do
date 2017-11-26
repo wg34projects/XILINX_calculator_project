@@ -27,7 +27,7 @@ add wave -noupdate -height 30 -format Decimal /tb_calc_top/i_calc_top/op1
 add wave -noupdate -height 30 -format Decimal /tb_calc_top/i_calc_top/op2
 add wave -noupdate -height 30 -format Logic /tb_calc_top/i_calc_top/optype
 add wave -noupdate -height 30 -format Logic /tb_calc_top/i_calc_top/start
-add wave -divider -height 30 "FMS state"
+add wave -divider -height 30 "FSM state"
 add wave -noupdate -height 30 -format Logic /tb_calc_top/i_calc_top/i_calc_ctrl/buttonstate_s
 add wave -noupdate -height 30 -format Logic /tb_calc_top/i_calc_top/i_calc_ctrl/state_s 
 TreeUpdate [SetDefaultTree]

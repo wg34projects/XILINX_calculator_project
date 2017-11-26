@@ -2,105 +2,176 @@
 \label{classio__ctrl_1_1rtl}\index{rtl@{rtl}}
 
 
-IO Control Unit Architecture.  
+IO Control Unit Architecture R\+TL.  
 
 
 \subsection*{Processes}
  \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classio__ctrl_1_1rtl_ae82c89fe12aec7f3a8a04e832dd5cc0e}{p\+\_\+slowen}{\bfseries  ( {\bfseries \textcolor{vhdlchar}{clk\+\_\+i}\textcolor{vhdlchar}{ }} , {\bfseries \textcolor{vhdlchar}{reset\+\_\+i}\textcolor{vhdlchar}{ }} )}
-\begin{DoxyCompactList}\small\item\em IO Control Unit Architecture. \end{DoxyCompactList}\item 
-\hyperlink{classio__ctrl_1_1rtl_a627aed9352c04ffc84d1b682c4da9ba5}{p\+\_\+debounce}{\bfseries  ( {\bfseries \textcolor{vhdlchar}{clk\+\_\+i}\textcolor{vhdlchar}{ }} , {\bfseries \textcolor{vhdlchar}{reset\+\_\+i}\textcolor{vhdlchar}{ }} )}
-\begin{DoxyCompactList}\small\item\em IO Control Unit Architecture. \end{DoxyCompactList}\item 
-\hyperlink{classio__ctrl_1_1rtl_a9adae6696d8563868e95204ecd77e739}{p\+\_\+display\+\_\+ctrl}{\bfseries  ( {\bfseries \textcolor{vhdlchar}{clk\+\_\+i}\textcolor{vhdlchar}{ }} , {\bfseries \textcolor{vhdlchar}{reset\+\_\+i}\textcolor{vhdlchar}{ }} )}
-\begin{DoxyCompactList}\small\item\em IO Control Unit Architecture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classio__ctrl_1_1rtl_ae82c89fe12aec7f3a8a04e832dd5cc0e}{p\+\_\+slowen}{\bfseries  ( {\bfseries {\bfseries \hyperlink{classio__ctrl_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classio__ctrl_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}} \textcolor{vhdlchar}{ }} )}
+\begin{DoxyCompactList}\small\item\em IO Control Unit Architecture R\+TL. \end{DoxyCompactList}\item 
+\hyperlink{classio__ctrl_1_1rtl_a627aed9352c04ffc84d1b682c4da9ba5}{p\+\_\+debounce}{\bfseries  ( {\bfseries {\bfseries \hyperlink{classio__ctrl_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classio__ctrl_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}} \textcolor{vhdlchar}{ }} )}
+\begin{DoxyCompactList}\small\item\em IO Control Unit Architecture R\+TL. \end{DoxyCompactList}\item 
+\hyperlink{classio__ctrl_1_1rtl_a9adae6696d8563868e95204ecd77e739}{p\+\_\+display\+\_\+ctrl}{\bfseries  ( {\bfseries {\bfseries \hyperlink{classio__ctrl_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}} \textcolor{vhdlchar}{ }} , {\bfseries {\bfseries \hyperlink{classio__ctrl_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}} \textcolor{vhdlchar}{ }} )}
+\begin{DoxyCompactList}\small\item\em IO Control Unit Architecture R\+TL. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Libraries}
  \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}\label{classio__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}} 
 \hyperlink{classio__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}{I\+E\+EE} 
 \end{DoxyCompactItemize}
 \subsection*{Use Clauses}
  \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}\label{classio__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}} 
 \hyperlink{classio__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}{std\+\_\+logic\+\_\+1164}   
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}\label{classio__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}} 
 \hyperlink{classio__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}{std\+\_\+logic\+\_\+arith}   
 \end{DoxyCompactItemize}
 \subsection*{Constants}
  \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a85d68696ce8aad74f4f3f0f5d6cb860a}\label{classio__ctrl_1_1rtl_a85d68696ce8aad74f4f3f0f5d6cb860a}} 
-\hyperlink{classio__ctrl_1_1rtl_a85d68696ce8aad74f4f3f0f5d6cb860a}{C\+\_\+\+E\+N\+C\+O\+U\+N\+T\+V\+AL} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{16} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000011010100000 \char`\"{}}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_a85d68696ce8aad74f4f3f0f5d6cb860a}{C\+\_\+\+E\+N\+C\+O\+U\+N\+T\+V\+AL} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{16} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000011010100000 \char`\"{}}\textcolor{vhdlchar}{ }} 
 \end{DoxyCompactItemize}
 \subsection*{Signals}
  \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a3280fe5d78cf2b9c6e3160d7855f3168}\label{classio__ctrl_1_1rtl_a3280fe5d78cf2b9c6e3160d7855f3168}} 
-\hyperlink{classio__ctrl_1_1rtl_a3280fe5d78cf2b9c6e3160d7855f3168}{s\+\_\+enctr} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{16} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_a3280fe5d78cf2b9c6e3160d7855f3168}{s\+\_\+enctr} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{16} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a6f6967086ba7f5aa15cf15dc1017e1ee}\label{classio__ctrl_1_1rtl_a6f6967086ba7f5aa15cf15dc1017e1ee}} 
-\hyperlink{classio__ctrl_1_1rtl_a6f6967086ba7f5aa15cf15dc1017e1ee}{s\+\_\+1khzen} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_a6f6967086ba7f5aa15cf15dc1017e1ee}{s\+\_\+1khzen} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a9beb24b7dc36ee4c13f031555d2ceb3c}\label{classio__ctrl_1_1rtl_a9beb24b7dc36ee4c13f031555d2ceb3c}} 
-\hyperlink{classio__ctrl_1_1rtl_a9beb24b7dc36ee4c13f031555d2ceb3c}{swsync} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{15} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_a9beb24b7dc36ee4c13f031555d2ceb3c}{swsync} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{15} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a5c1bd4d44af9b0f340317c2228eda942}\label{classio__ctrl_1_1rtl_a5c1bd4d44af9b0f340317c2228eda942}} 
-\hyperlink{classio__ctrl_1_1rtl_a5c1bd4d44af9b0f340317c2228eda942}{pbsync} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_a5c1bd4d44af9b0f340317c2228eda942}{pbsync} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a004d6c8caba65b687289b36ecea87a98}\label{classio__ctrl_1_1rtl_a004d6c8caba65b687289b36ecea87a98}} 
-\hyperlink{classio__ctrl_1_1rtl_a004d6c8caba65b687289b36ecea87a98}{s\+\_\+ss\+\_\+sel} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_a004d6c8caba65b687289b36ecea87a98}{s\+\_\+ss\+\_\+sel} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_ad246180727a4d128207d3681d61db04d}\label{classio__ctrl_1_1rtl_ad246180727a4d128207d3681d61db04d}} 
-\hyperlink{classio__ctrl_1_1rtl_ad246180727a4d128207d3681d61db04d}{s\+\_\+ss} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_ad246180727a4d128207d3681d61db04d}{s\+\_\+ss} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a8ccbdb26e3f7c6ca59e3b30524abd69a}\label{classio__ctrl_1_1rtl_a8ccbdb26e3f7c6ca59e3b30524abd69a}} 
-\hyperlink{classio__ctrl_1_1rtl_a8ccbdb26e3f7c6ca59e3b30524abd69a}{s\+\_\+muxcnt} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{1} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_a8ccbdb26e3f7c6ca59e3b30524abd69a}{s\+\_\+muxcnt} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{1} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
 \item 
-\mbox{\Hypertarget{classio__ctrl_1_1rtl_a6f1a8f78ddc25f65e38808e8a815afdd}\label{classio__ctrl_1_1rtl_a6f1a8f78ddc25f65e38808e8a815afdd}} 
-\hyperlink{classio__ctrl_1_1rtl_a6f1a8f78ddc25f65e38808e8a815afdd}{s\+\_\+debcnt} {\bfseries \textcolor{vhdlchar}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\hyperlink{classio__ctrl_1_1rtl_a9a9efdd64179e1002b1483066213801a}{s\+\_\+debcnt} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{1} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} 
+\item 
+\hyperlink{classio__ctrl_1_1rtl_a836b188aedf20a856e51efb3d9d5282f}{s\+\_\+button} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} 
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-IO Control Unit Architecture. 
+IO Control Unit Architecture R\+TL. 
 
-The IO Control uniti part of the calculator project. 
+The IO Control unit is part of the calculator project. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classio__ctrl_1_1rtl_a627aed9352c04ffc84d1b682c4da9ba5}\label{classio__ctrl_1_1rtl_a627aed9352c04ffc84d1b682c4da9ba5}} 
 \index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!p\+\_\+debounce@{p\+\_\+debounce}}
 \index{p\+\_\+debounce@{p\+\_\+debounce}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
 \subsubsection{\texorpdfstring{p\+\_\+debounce()}{p\_debounce()}}
-{\footnotesize\ttfamily  {\bfseries \textcolor{vhdlchar}{ }} p\+\_\+debounce(\begin{DoxyParamCaption}\item[{}]{{\bfseries \textcolor{vhdlchar}{clk\+\_\+i}\textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries \textcolor{vhdlchar}{reset\+\_\+i}\textcolor{vhdlchar}{ }} {\em } }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Process]}}
+{\footnotesize\ttfamily  {\bfseries \textcolor{vhdlchar}{ }} p\+\_\+debounce(\begin{DoxyParamCaption}\item[{}]{{\bfseries {\bfseries \hyperlink{classio__ctrl_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classio__ctrl_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Process]}}
 
 
 
-IO Control Unit Architecture. 
+IO Control Unit Architecture R\+TL. 
 
-Process for button debounce. \mbox{\Hypertarget{classio__ctrl_1_1rtl_a9adae6696d8563868e95204ecd77e739}\label{classio__ctrl_1_1rtl_a9adae6696d8563868e95204ecd77e739}} 
+Process for button debounce \mbox{\Hypertarget{classio__ctrl_1_1rtl_a9adae6696d8563868e95204ecd77e739}\label{classio__ctrl_1_1rtl_a9adae6696d8563868e95204ecd77e739}} 
 \index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!p\+\_\+display\+\_\+ctrl@{p\+\_\+display\+\_\+ctrl}}
 \index{p\+\_\+display\+\_\+ctrl@{p\+\_\+display\+\_\+ctrl}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
 \subsubsection{\texorpdfstring{p\+\_\+display\+\_\+ctrl()}{p\_display\_ctrl()}}
-{\footnotesize\ttfamily  {\bfseries \textcolor{vhdlchar}{ }} p\+\_\+display\+\_\+ctrl(\begin{DoxyParamCaption}\item[{}]{{\bfseries \textcolor{vhdlchar}{clk\+\_\+i}\textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries \textcolor{vhdlchar}{reset\+\_\+i}\textcolor{vhdlchar}{ }} {\em } }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Process]}}
+{\footnotesize\ttfamily  {\bfseries \textcolor{vhdlchar}{ }} p\+\_\+display\+\_\+ctrl(\begin{DoxyParamCaption}\item[{}]{{\bfseries {\bfseries \hyperlink{classio__ctrl_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classio__ctrl_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Process]}}
 
 
 
-IO Control Unit Architecture. 
+IO Control Unit Architecture R\+TL. 
 
-Process to control 7 segment displays. \mbox{\Hypertarget{classio__ctrl_1_1rtl_ae82c89fe12aec7f3a8a04e832dd5cc0e}\label{classio__ctrl_1_1rtl_ae82c89fe12aec7f3a8a04e832dd5cc0e}} 
+Process to control 7 segment displays \mbox{\Hypertarget{classio__ctrl_1_1rtl_ae82c89fe12aec7f3a8a04e832dd5cc0e}\label{classio__ctrl_1_1rtl_ae82c89fe12aec7f3a8a04e832dd5cc0e}} 
 \index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!p\+\_\+slowen@{p\+\_\+slowen}}
 \index{p\+\_\+slowen@{p\+\_\+slowen}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
 \subsubsection{\texorpdfstring{p\+\_\+slowen()}{p\_slowen()}}
-{\footnotesize\ttfamily  {\bfseries \textcolor{vhdlchar}{ }} p\+\_\+slowen(\begin{DoxyParamCaption}\item[{}]{{\bfseries \textcolor{vhdlchar}{clk\+\_\+i}\textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries \textcolor{vhdlchar}{reset\+\_\+i}\textcolor{vhdlchar}{ }} {\em } }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Process]}}
+{\footnotesize\ttfamily  {\bfseries \textcolor{vhdlchar}{ }} p\+\_\+slowen(\begin{DoxyParamCaption}\item[{}]{{\bfseries {\bfseries \hyperlink{classio__ctrl_abe949478e3f8aad0a6aeb1842fa6c608}{clk\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } ,  }\item[{}]{{\bfseries {\bfseries \hyperlink{classio__ctrl_a55da7e76960757f8c6842e86a28ee7be}{reset\+\_\+i}} \textcolor{vhdlchar}{ }} {\em } }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [Process]}}
 
 
 
-IO Control Unit Architecture. 
+IO Control Unit Architecture R\+TL. 
 
-Process for 1k\+Hz signal. 
+Process for 1k\+Hz signal 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a85d68696ce8aad74f4f3f0f5d6cb860a}\label{classio__ctrl_1_1rtl_a85d68696ce8aad74f4f3f0f5d6cb860a}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!C\+\_\+\+E\+N\+C\+O\+U\+N\+T\+V\+AL@{C\+\_\+\+E\+N\+C\+O\+U\+N\+T\+V\+AL}}
+\index{C\+\_\+\+E\+N\+C\+O\+U\+N\+T\+V\+AL@{C\+\_\+\+E\+N\+C\+O\+U\+N\+T\+V\+AL}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{C\+\_\+\+E\+N\+C\+O\+U\+N\+T\+V\+AL}{C\_ENCOUNTVAL}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a85d68696ce8aad74f4f3f0f5d6cb860a}{C\+\_\+\+E\+N\+C\+O\+U\+N\+T\+V\+AL} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{16} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{\+:}\textcolor{vhdlchar}{=}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ }\textcolor{keyword}{\char`\"{} 11000011010100000 \char`\"{}}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Constant]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}\label{classio__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!I\+E\+EE@{I\+E\+EE}}
+\index{I\+E\+EE@{I\+E\+EE}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{I\+E\+EE}{IEEE}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_ae4f03c286607f3181e16b9aa12d0c6d4}{I\+E\+EE}\hspace{0.3cm}{\ttfamily [Library]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a5c1bd4d44af9b0f340317c2228eda942}\label{classio__ctrl_1_1rtl_a5c1bd4d44af9b0f340317c2228eda942}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!pbsync@{pbsync}}
+\index{pbsync@{pbsync}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{pbsync}{pbsync}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a5c1bd4d44af9b0f340317c2228eda942}{pbsync} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a6f6967086ba7f5aa15cf15dc1017e1ee}\label{classio__ctrl_1_1rtl_a6f6967086ba7f5aa15cf15dc1017e1ee}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!s\+\_\+1khzen@{s\+\_\+1khzen}}
+\index{s\+\_\+1khzen@{s\+\_\+1khzen}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{s\+\_\+1khzen}{s\_1khzen}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a6f6967086ba7f5aa15cf15dc1017e1ee}{s\+\_\+1khzen} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a836b188aedf20a856e51efb3d9d5282f}\label{classio__ctrl_1_1rtl_a836b188aedf20a856e51efb3d9d5282f}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!s\+\_\+button@{s\+\_\+button}}
+\index{s\+\_\+button@{s\+\_\+button}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{s\+\_\+button}{s\_button}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a836b188aedf20a856e51efb3d9d5282f}{s\+\_\+button} {\bfseries \textcolor{comment}{std\+\_\+logic}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a9a9efdd64179e1002b1483066213801a}\label{classio__ctrl_1_1rtl_a9a9efdd64179e1002b1483066213801a}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!s\+\_\+debcnt@{s\+\_\+debcnt}}
+\index{s\+\_\+debcnt@{s\+\_\+debcnt}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{s\+\_\+debcnt}{s\_debcnt}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a9a9efdd64179e1002b1483066213801a}{s\+\_\+debcnt} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{1} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a3280fe5d78cf2b9c6e3160d7855f3168}\label{classio__ctrl_1_1rtl_a3280fe5d78cf2b9c6e3160d7855f3168}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!s\+\_\+enctr@{s\+\_\+enctr}}
+\index{s\+\_\+enctr@{s\+\_\+enctr}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{s\+\_\+enctr}{s\_enctr}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a3280fe5d78cf2b9c6e3160d7855f3168}{s\+\_\+enctr} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{16} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a8ccbdb26e3f7c6ca59e3b30524abd69a}\label{classio__ctrl_1_1rtl_a8ccbdb26e3f7c6ca59e3b30524abd69a}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!s\+\_\+muxcnt@{s\+\_\+muxcnt}}
+\index{s\+\_\+muxcnt@{s\+\_\+muxcnt}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{s\+\_\+muxcnt}{s\_muxcnt}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a8ccbdb26e3f7c6ca59e3b30524abd69a}{s\+\_\+muxcnt} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{1} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_ad246180727a4d128207d3681d61db04d}\label{classio__ctrl_1_1rtl_ad246180727a4d128207d3681d61db04d}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!s\+\_\+ss@{s\+\_\+ss}}
+\index{s\+\_\+ss@{s\+\_\+ss}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{s\+\_\+ss}{s\_ss}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_ad246180727a4d128207d3681d61db04d}{s\+\_\+ss} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{7} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a004d6c8caba65b687289b36ecea87a98}\label{classio__ctrl_1_1rtl_a004d6c8caba65b687289b36ecea87a98}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!s\+\_\+ss\+\_\+sel@{s\+\_\+ss\+\_\+sel}}
+\index{s\+\_\+ss\+\_\+sel@{s\+\_\+ss\+\_\+sel}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{s\+\_\+ss\+\_\+sel}{s\_ss\_sel}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a004d6c8caba65b687289b36ecea87a98}{s\+\_\+ss\+\_\+sel} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{3} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}\label{classio__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!std\+\_\+logic\+\_\+1164@{std\+\_\+logic\+\_\+1164}}
+\index{std\+\_\+logic\+\_\+1164@{std\+\_\+logic\+\_\+1164}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{std\+\_\+logic\+\_\+1164}{std\_logic\_1164}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_acd03516902501cd1c7296a98e22c6fcb}{std\+\_\+logic\+\_\+1164}\hspace{0.3cm}{\ttfamily [Package]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}\label{classio__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!std\+\_\+logic\+\_\+arith@{std\+\_\+logic\+\_\+arith}}
+\index{std\+\_\+logic\+\_\+arith@{std\+\_\+logic\+\_\+arith}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{std\+\_\+logic\+\_\+arith}{std\_logic\_arith}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a0f5ecc6613f63d07f7963a97b1b26095}{std\+\_\+logic\+\_\+arith}\hspace{0.3cm}{\ttfamily [Package]}}
+
+\mbox{\Hypertarget{classio__ctrl_1_1rtl_a9beb24b7dc36ee4c13f031555d2ceb3c}\label{classio__ctrl_1_1rtl_a9beb24b7dc36ee4c13f031555d2ceb3c}} 
+\index{io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}!swsync@{swsync}}
+\index{swsync@{swsync}!io\+\_\+ctrl\+::rtl@{io\+\_\+ctrl\+::rtl}}
+\subsubsection{\texorpdfstring{swsync}{swsync}}
+{\footnotesize\ttfamily \hyperlink{classio__ctrl_1_1rtl_a9beb24b7dc36ee4c13f031555d2ceb3c}{swsync} {\bfseries \textcolor{comment}{std\+\_\+logic\+\_\+vector}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{(}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{15} \textcolor{vhdlchar}{ }\textcolor{keywordflow}{downto}\textcolor{vhdlchar}{ }\textcolor{vhdlchar}{ } \textcolor{vhdldigit}{0} \textcolor{vhdlchar}{ }\textcolor{vhdlchar}{)}\textcolor{vhdlchar}{ }} \hspace{0.3cm}{\ttfamily [Signal]}}
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

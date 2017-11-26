@@ -1,0 +1,25 @@
+msim
+├── 11_compile.do
+├── 12_sim.do
+├── 21_compile.do
+├── 22_sim.do
+├── 31_compile.do
+├── 32_sim.do
+├── 41_compile.do
+├── 42_sim.do
+├── alu_wave.do
+├── calc_ctrl_wave.do
+├── calc_top_wave.do
+├── io_ctrl_wave.do
+├── transcript
+├── vsim.wlf
+└── work
+    ├── _info
+    ├── _info_conflict-20171115-214529
+    ├── _lib1_193.qdb
+    ├── _lib1_193.qpg
+    ├── _lib1_193.qtl
+    ├── _lib.qdb
+    └── _vmake
+
+1 directory, 21 files

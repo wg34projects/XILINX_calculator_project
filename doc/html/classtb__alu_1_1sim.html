@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,7 +30,9 @@
   <td id="projectlogo"><img alt="Logo" src="fhtw.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VHDL calculator project BEL3
+   &#160;<span id="projectnumber">Version 1.0 - overhanding</span>
    </div>
+   <div id="projectbrief">VHDL calculator project BASYS3 board</div>
   </td>
  </tr>
  </tbody>
@@ -43,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classtb__alu_1_1sim.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -57,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="classtb__alu.html">tb_alu</a></li><li class="navelem"><a class="el" href="classtb__alu_1_1sim.html">sim</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#Components">Components</a> &#124;
@@ -99,17 +118,17 @@ Components</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="Signals"></a>
 Signals</h2></td></tr>
- <tr class="memitem:a51bcb92d1464ea7874528ced3e160ff1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a51bcb92d1464ea7874528ced3e160ff1">clk_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:acdf401306b90eed21a930a1cdc85e912"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#acdf401306b90eed21a930a1cdc85e912">reset_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a8c60ff20331a9cd9b08c5a142fc84aa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a8c60ff20331a9cd9b08c5a142fc84aa3">op1_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:aa276f04f45d1c99bdc54e15f6c7208cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#aa276f04f45d1c99bdc54e15f6c7208cb">op2_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a1a0a59366519e7db193082632d0164f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a1a0a59366519e7db193082632d0164f8">optype_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a414f95cbdddc836387d71b48c83730c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a414f95cbdddc836387d71b48c83730c8">start_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:ab0632c3f5d92d282b6559777bd6dc018"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#ab0632c3f5d92d282b6559777bd6dc018">finished_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:a9dbda0fe1ce0149ac85e0c8e3bc9d201"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a9dbda0fe1ce0149ac85e0c8e3bc9d201">result_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:af79695f4ad70e8ad8db0623ecd408492"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#af79695f4ad70e8ad8db0623ecd408492">sign_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:ae42e6c3352339b3983bdd4a7df3d0c65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#ae42e6c3352339b3983bdd4a7df3d0c65">overflow_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memitem:aea39ae165b49f7a12978d9290d22ff85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#aea39ae165b49f7a12978d9290d22ff85">error_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+ <tr class="memitem:a51bcb92d1464ea7874528ced3e160ff1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a51bcb92d1464ea7874528ced3e160ff1">clk_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:acdf401306b90eed21a930a1cdc85e912"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#acdf401306b90eed21a930a1cdc85e912">reset_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a8c60ff20331a9cd9b08c5a142fc84aa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a8c60ff20331a9cd9b08c5a142fc84aa3">op1_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:aa276f04f45d1c99bdc54e15f6c7208cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#aa276f04f45d1c99bdc54e15f6c7208cb">op2_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a1a0a59366519e7db193082632d0164f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a1a0a59366519e7db193082632d0164f8">optype_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a414f95cbdddc836387d71b48c83730c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a414f95cbdddc836387d71b48c83730c8">start_i</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:ab0632c3f5d92d282b6559777bd6dc018"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#ab0632c3f5d92d282b6559777bd6dc018">finished_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a9dbda0fe1ce0149ac85e0c8e3bc9d201"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#a9dbda0fe1ce0149ac85e0c8e3bc9d201">result_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:af79695f4ad70e8ad8db0623ecd408492"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#af79695f4ad70e8ad8db0623ecd408492">sign_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:ae42e6c3352339b3983bdd4a7df3d0c65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#ae42e6c3352339b3983bdd4a7df3d0c65">overflow_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:aea39ae165b49f7a12978d9290d22ff85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtb__alu_1_1sim.html#aea39ae165b49f7a12978d9290d22ff85">error_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="Instantiations"></a>
 Instantiations</h2></td></tr>
@@ -197,7 +216,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a51bcb92d1464ea7874528ced3e160ff1">clk_i</a> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a51bcb92d1464ea7874528ced3e160ff1">clk_i</a> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -219,7 +238,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#aea39ae165b49f7a12978d9290d22ff85">error_o</a> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#aea39ae165b49f7a12978d9290d22ff85">error_o</a> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -241,7 +260,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#ab0632c3f5d92d282b6559777bd6dc018">finished_o</a> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#ab0632c3f5d92d282b6559777bd6dc018">finished_o</a> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -307,7 +326,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a8c60ff20331a9cd9b08c5a142fc84aa3">op1_i</a> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a8c60ff20331a9cd9b08c5a142fc84aa3">op1_i</a> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -329,7 +348,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#aa276f04f45d1c99bdc54e15f6c7208cb">op2_i</a> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#aa276f04f45d1c99bdc54e15f6c7208cb">op2_i</a> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">11</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -351,7 +370,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a1a0a59366519e7db193082632d0164f8">optype_i</a> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a1a0a59366519e7db193082632d0164f8">optype_i</a> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">3</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -373,7 +392,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#ae42e6c3352339b3983bdd4a7df3d0c65">overflow_o</a> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#ae42e6c3352339b3983bdd4a7df3d0c65">overflow_o</a> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -395,7 +414,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#acdf401306b90eed21a930a1cdc85e912">reset_i</a> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#acdf401306b90eed21a930a1cdc85e912">reset_i</a> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -417,7 +436,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a9dbda0fe1ce0149ac85e0c8e3bc9d201">result_o</a> <b><span class="vhdlchar">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="vhdlchar">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a9dbda0fe1ce0149ac85e0c8e3bc9d201">result_o</a> <b><span class="comment">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">15</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -439,7 +458,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#af79695f4ad70e8ad8db0623ecd408492">sign_o</a> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#af79695f4ad70e8ad8db0623ecd408492">sign_o</a> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -461,7 +480,7 @@ Instantiations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a414f95cbdddc836387d71b48c83730c8">start_i</a> <b><span class="vhdlchar">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="classtb__alu_1_1sim.html#a414f95cbdddc836387d71b48c83730c8">start_i</a> <b><span class="comment">std_logic</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
   </td>
@@ -499,11 +518,15 @@ Instantiations</h2></td></tr>
 <li>tb/<a class="el" href="tb__alu__sim_8vhd.html">tb_alu_sim.vhd</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classtb__alu.html">tb_alu</a></li><li class="navelem"><a class="el" href="classtb__alu_1_1sim.html">sim</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>
